@@ -1,17 +1,35 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10f;
+    bool alive = true;
+
+    public float speed = 5f;
     public float jumpHeight = 5f;
-    public float crouchHeight = 1f;
+    public float crouchHeight = .5f;
+    public Rigidbody rb;
 
-    private bool isGrounded = true;
-    private bool isCrouching = false;
+    bool isGrounded = false;
+    bool isCrouching = false;
+    
+    float horizontalInput;
 
-    private void Update()
+    public float horizontalMultiplier = 2;
+
+    private void FixedUpdate ()
     {
-        // Move the player horizontally within the three lanes
+        if (!alive) return;
+
+        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
+        rb.MovePosition(rb.position + forwardMove + horizontalMove);
+    }
+
+    void Update()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        if(!alive) return;
         if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -2f)
         {
             transform.position = new Vector3(transform.position.x - 2f, transform.position.y, transform.position.z);
@@ -20,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x +2f, transform.position.y, transform.position.z);
         }
-        
         // Check if the player is grounded
         if (Physics.Raycast(transform.position, Vector3.down, 1f))
         {
@@ -49,8 +66,19 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
             isCrouching = false;
         }
+        if (transform.position.y < -5)
+        {
+            Die();
+        }
+    }
 
-        // Freeze player rotation to prevent flipping
-        GetComponent<Rigidbody>().freezeRotation = true;
+    public void Die(){
+        alive = false;
+        Invoke("Restart", 2);
+    }
+    
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
