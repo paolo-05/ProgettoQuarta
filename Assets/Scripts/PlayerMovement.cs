@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     bool alive = true;
 
     public float speed = 5f;
-    public float jumpHeight = 5f;
+    public float jumpHeight = 8.5f;
     public float crouchHeight = .5f;
     public Rigidbody rb;
 
@@ -15,31 +15,28 @@ public class PlayerMovement : MonoBehaviour
     
     float horizontalInput;
 
-    public float horizontalMultiplier = 2;
-
     private void FixedUpdate ()
     {
         if (!alive) return;
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
-        rb.MovePosition(rb.position + forwardMove + horizontalMove);
+        rb.MovePosition(rb.position + forwardMove);
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         if(!alive) return;
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -2f)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -3f)
         {
-            transform.position = new Vector3(transform.position.x - 2f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - 3f, transform.position.y, transform.position.z);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 2f)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 3f)
         {
-            transform.position = new Vector3(transform.position.x +2f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x +3f, transform.position.y, transform.position.z);
         }
         // Check if the player is grounded
-        if (Physics.Raycast(transform.position, Vector3.down, 1f))
+        if (Physics.Raycast(transform.position, Vector3.down, 2f))
         {
             isGrounded = true;
         }
