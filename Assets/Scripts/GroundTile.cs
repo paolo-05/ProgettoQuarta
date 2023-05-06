@@ -3,6 +3,9 @@ using UnityEngine;
 public class GroundTile : MonoBehaviour
 {
     public GameObject coinPrefab;
+    public GameObject obstaclePrefab;
+
+    float[] coinSpawnPositions = { -3.3f, 0, 3.3f };
     GroundSpawner groundSpawner;
     GameManager gameManager;
 
@@ -37,8 +40,6 @@ public class GroundTile : MonoBehaviour
         
     }
 
-    public GameObject obstaclePrefab;
-
     void SpawnObstacle()
     {
         int obstacleSpawnIndex = Random.Range(2, 5);
@@ -55,9 +56,10 @@ public class GroundTile : MonoBehaviour
     void SpawnCoins()
     {
         int numCoins = Random.Range(0, 3);
+        int spawnIndex = Random.Range(0, 3);
         for (int i = 0; i < numCoins; i++)
         {
-            Vector3 coinSpawnPosition = new Vector3(Random.Range(-3, 3f), 1f, Random.Range(-3f, 3f));
+            Vector3 coinSpawnPosition = new Vector3(coinSpawnPositions[spawnIndex], 1f, Random.Range(-3f, 3f));
             GameObject coin = Instantiate(coinPrefab, transform.position + coinSpawnPosition, Quaternion.Euler(0, 90, 0), transform);
         }
     }

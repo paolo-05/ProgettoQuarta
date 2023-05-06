@@ -27,11 +27,11 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         if(!alive) return;
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -3f)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) && transform.position.x > -3f)
         {
             transform.position = new Vector3(transform.position.x - 3f, transform.position.y, transform.position.z);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 3f)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && transform.position.x < 3f)
         {
             transform.position = new Vector3(transform.position.x +3f, transform.position.y, transform.position.z);
         }
@@ -46,14 +46,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isCrouching)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && isGrounded && !isCrouching)
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             isGrounded = false;
         }
 
         // Crouch
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.C)  || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && isGrounded)
         {
             transform.localScale = new Vector3(1, crouchHeight, 1);
             isCrouching = true;
@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die(){
         alive = false;
+        Debug.Log(GameManager.instance.thisGameCoins);
         Invoke("Restart", 2);
     }
     
