@@ -48,8 +48,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && isGrounded && !isCrouching)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && isGrounded && !isCrouching)
         {
+            Debug.Log(isGrounded);
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             isGrounded = false;
         }

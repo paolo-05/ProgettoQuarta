@@ -1,0 +1,15 @@
+!!! - better crouching
+!! - General UI
+!! - implement AUDIO
+!!! - find a title
+! - better player (now is a pill)
+! - better obstacles (now are literal flying cubes)
+!!!! - maybe implement shooting some ops that run to the player
+! - how to play screen it's ez
+ - ... 
+
+
+pubblish the game on simmer IO
+
+
+the esclamation marks are for their priority
