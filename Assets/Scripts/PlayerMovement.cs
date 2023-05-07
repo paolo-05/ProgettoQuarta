@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpHeight = 8.5f;
     public float crouchHeight = .5f;
-    public Rigidbody rb;
+    [SerializeField] Rigidbody rb;
 
     bool isGrounded = false;
     bool isCrouching = false;
     
     float horizontalInput;
+
+    public float speedIncreasePerPoint = 0.1f;
 
     private void FixedUpdate ()
     {
@@ -27,11 +29,11 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         if(!alive) return;
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) && transform.position.x > -3f)
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && transform.position.x > -3f)
         {
             transform.position = new Vector3(transform.position.x - 3f, transform.position.y, transform.position.z);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && transform.position.x < 3f)
+        else if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && transform.position.x < 3f)
         {
             transform.position = new Vector3(transform.position.x +3f, transform.position.y, transform.position.z);
         }
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Crouch
-        if (Input.GetKey(KeyCode.C)  || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && isGrounded)
+        if (Input.GetKey(KeyCode.C)  || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.localScale = new Vector3(1, crouchHeight, 1);
             isCrouching = true;

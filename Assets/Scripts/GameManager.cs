@@ -4,17 +4,19 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public int tilesFreeFromObstacles = 3;
     private int score = 0;
     public int thisGameCoins = 0;
     private int coins;
     private int personalBest;
-    public float gameSpeed = 5f;
-    public float obstacleSpawnTime = 2f;
+  
 
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI personalBestText;
-    public TextMeshProUGUI coinText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI personalBestText;
+    [SerializeField] TextMeshProUGUI coinText;
+
+    [SerializeField] PlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -37,23 +39,6 @@ public class GameManager : MonoBehaviour
         // Update the personal best text and coins text
         personalBestText.text = "Personal Best: " + personalBest.ToString();
         coinText.text = "Coins: " + coins.ToString();
-
-        InvokeRepeating("IncreaseGameSpeed", 10f, 10f);
-        InvokeRepeating("DecreaseObstacleSpawnTime", 10f, 10f);
-    }
-
-    private void IncreaseGameSpeed()
-    {
-        gameSpeed += 1f;
-    }
-
-    private void DecreaseObstacleSpawnTime()
-    {
-        obstacleSpawnTime -= 0.1f;
-        if (obstacleSpawnTime < 0.5f)
-        {
-            obstacleSpawnTime = 0.5f;
-        }
     }
 
     public void IncrementScore()
@@ -75,5 +60,7 @@ public class GameManager : MonoBehaviour
         coins += amount;
         PlayerPrefs.SetInt("Coins", coins);
         coinText.text = "Coins: " + coins.ToString();
+
+        playerMovement.speed += playerMovement.speedIncreasePerPoint;
     }
 }

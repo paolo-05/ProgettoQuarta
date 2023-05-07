@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class GroundTile : MonoBehaviour
 {
-    public GameObject coinPrefab;
-    public GameObject obstaclePrefab;
+    [SerializeField] GameObject coinPrefab;
+    [SerializeField] GameObject obstaclePrefab;
 
     float[] coinSpawnPositions = { -3.3f, 0, 3.3f };
     GroundSpawner groundSpawner;
