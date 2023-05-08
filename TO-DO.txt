@@ -6,7 +6,8 @@
 ! - better obstacles (now are literal flying cubes)
 !!!! - maybe implement shooting some ops that run to the player
 ! - how to play screen it's ez
- - ... 
+!!!!! - the game will consist to an infinite runner game the player will collect the coins and the coins would
+	  let him buy a more powerful gun, the more that the game goes by, the enemies will be more hard to kill
 
 
 pubblish the game on simmer IO
