@@ -6,7 +6,7 @@ public class GunController : MonoBehaviour
 
     public float bulletDamage = 10f;
     public float bulletRange = 20f;
-    public float bulletSpeed = 10f;
+    public float bulletSpeed = 20f;
     //public AudioClip shootSound;
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;

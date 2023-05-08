@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 20f;
     public float range = 20f;
     public float damage = 10f;
 
     private float distanceTravelled = 0f;
 
-    void Update()
+    private void Update()
     {
         // Move the bullet forward
-        transform.Translate(new Vector3(-1, 0, 0) * speed * Time.deltaTime);
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         // Check if the bullet has reached its maximum range
         distanceTravelled += speed * Time.deltaTime;

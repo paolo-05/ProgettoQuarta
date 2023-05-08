@@ -4,8 +4,9 @@ public class GroundTile : MonoBehaviour
 {
     [SerializeField] GameObject coinPrefab;
     [SerializeField] GameObject obstaclePrefab;
+    [SerializeField] GameObject enemyPrefab;
 
-    float[] coinSpawnPositions = { -3.3f, 0, 3.3f };
+    float[] spawnPositions = { -3.3f, 0, 3.3f };
     GroundSpawner groundSpawner;
     GameManager gameManager;
 
@@ -22,6 +23,7 @@ public class GroundTile : MonoBehaviour
         if (gameManager.tilesFreeFromObstacles <= 0)
         {
             SpawnObstacle();
+            SpawnEnemies();
         }
         SpawnCoins();
     }
@@ -59,9 +61,18 @@ public class GroundTile : MonoBehaviour
         int spawnIndex = Random.Range(0, 3);
         for (int i = 0; i < numCoins; i++)
         {
-            Vector3 coinSpawnPosition = new Vector3(coinSpawnPositions[spawnIndex], 1f, Random.Range(-3f, 3f));
+            Vector3 coinSpawnPosition = new Vector3(spawnPositions[spawnIndex], 1f, Random.Range(-3f, 3f));
             GameObject coin = Instantiate(coinPrefab, transform.position + coinSpawnPosition, Quaternion.Euler(0, 90, 0), transform);
         }
     }
-
+    void SpawnEnemies()
+    {
+        int numEnemies = Random.Range(0, 3);
+        int spawmIndex = Random.Range(0, 3);
+        for (int i = 0; i < numEnemies; i++)
+        {
+            Vector3 enemySpawnPosition = new Vector3(spawnPositions[spawmIndex], 1f, Random.Range(-3, 3f));
+            GameObject enemy = Instantiate(enemyPrefab, transform.position + enemySpawnPosition, Quaternion.identity, transform);
+        }
+    }
 }

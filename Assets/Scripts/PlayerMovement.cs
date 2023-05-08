@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded = false;
     bool isCrouching = false;
     
-    float horizontalInput;
-
     public float speedIncreasePerPoint = 0.1f;
 
     private void FixedUpdate ()
@@ -27,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
         if(!alive) return;
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && transform.position.x > -3f)
         {
@@ -37,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x +3f, transform.position.y, transform.position.z);
         }
+
         // Check if the player is grounded
         if (Physics.Raycast(transform.position, Vector3.down, 2f))
         {
@@ -66,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
             isCrouching = false;
         }
+
         if (transform.position.y < -5)
         {
             Die();
@@ -75,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     public void Die(){
         alive = false;
         Debug.Log(GameManager.instance.thisGameCoins);
-        Invoke("Restart", 2);
+        Invoke(nameof(Restart), 2);
     }
     
     void Restart()
