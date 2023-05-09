@@ -167,9 +167,10 @@ MonoBehaviour:
   fireRate: 0.2
   bulletDamage: 30
   bulletRange: 40
-  bulletSpeed: 10
+  bulletSpeed: 100
   bulletPrefab: {fileID: 3575611928538805115, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
   bulletSpawnPoint: {fileID: 6548778049416066185}
+  muzzleFlashPrefab: {fileID: 100006, guid: c5946a66b3eec2d479e20b7315b06bf8, type: 3}
 --- !u!1 &5642539791650178406
 GameObject:
   m_ObjectHideFlags: 0

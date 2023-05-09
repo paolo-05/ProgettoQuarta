@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public float fireRate = 0.2f;
+    public float fireRate = 0.1f;
 
     public float bulletDamage = 10f;
     public float bulletRange = 20f;
     public float bulletSpeed = 20f;
-    //public AudioClip shootSound;
+
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
+
+    //public AudioClip shootSound;
 
     private AudioSource audioSource;
     private float nextFire = 0;

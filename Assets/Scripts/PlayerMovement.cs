@@ -12,10 +12,10 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded = false;
     bool isCrouching = false;
-    
+
     public float speedIncreasePerPoint = 0.1f;
 
-    private void FixedUpdate ()
+    private void FixedUpdate()
     {
         if (!alive) return;
 
@@ -25,18 +25,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(!alive) return;
+        if (!alive) return;
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && transform.position.x > -3f)
         {
             transform.position = new Vector3(transform.position.x - 3f, transform.position.y, transform.position.z);
         }
         else if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && transform.position.x < 3f)
         {
-            transform.position = new Vector3(transform.position.x +3f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 3f, transform.position.y, transform.position.z);
         }
 
         // Check if the player is grounded
-        if (Physics.Raycast(transform.position, Vector3.down, 2f))
+        if (Physics.Raycast(transform.position, Vector3.down, 1.5f))
         {
             isGrounded = true;
         }
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Crouch
-        if (Input.GetKey(KeyCode.C)  || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.localScale = new Vector3(1, crouchHeight, 1);
             isCrouching = true;
@@ -71,12 +71,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Die(){
+    public void Die()
+    {
         alive = false;
         Debug.Log(GameManager.instance.thisGameCoins);
         Invoke(nameof(Restart), 2);
     }
-    
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

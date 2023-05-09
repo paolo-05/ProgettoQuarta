@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1460, y: -240}
+  m_AnchoredPosition: {x: 771, y: -81}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124730092
@@ -270,13 +270,25 @@ PrefabInstance:
       value: Weapon_01
       objectReference: {fileID: 0}
     - target: {fileID: 5307394599438000365, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
+      propertyPath: fireRate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307394599438000365, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
       propertyPath: bulletSpeed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5307394599438000365, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
       propertyPath: bulletDamage
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5307394599438000365, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
+      propertyPath: muzzleFlashPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419212469770837492, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2146312219}
     - target: {fileID: 5738456080911321149, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -473,8 +485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1375, y: -300}
-  m_SizeDelta: {x: 300, y: 50}
+  m_AnchoredPosition: {x: 677, y: -131}
+  m_SizeDelta: {x: 488, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310211492
 MonoBehaviour:
@@ -559,7 +571,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -85.25564, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.9453964, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -822,7 +834,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4362763, g: 0.66854584, b: 0.7169812, a: 1}
+  m_BackGroundColor: {r: 0, g: 0.6666667, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -963,7 +975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1460, y: -360}
+  m_AnchoredPosition: {x: 771, y: -181}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795519315

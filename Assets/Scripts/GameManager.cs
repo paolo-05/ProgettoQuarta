@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int thisGameCoins = 0;
     private int coins;
     private int personalBest;
-  
+
 
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI personalBestText;
@@ -41,9 +41,9 @@ public class GameManager : MonoBehaviour
         coinText.text = "Coins: " + coins.ToString();
     }
 
-    public void IncrementScore()
+    public void IncrementScore(int amount)
     {
-        score++;
+        score += amount;
         scoreText.text = "Score: " + score.ToString();
 
         if (score > personalBest)

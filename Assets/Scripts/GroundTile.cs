@@ -16,7 +16,7 @@ public class GroundTile : MonoBehaviour
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
 
-        if (gameManager.tilesFreeFromObstacles > 0 )
+        if (gameManager.tilesFreeFromObstacles > 0)
         {
             gameManager.tilesFreeFromObstacles--;
         }
@@ -28,18 +28,18 @@ public class GroundTile : MonoBehaviour
         SpawnCoins();
     }
 
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerExit(Collider other)
     {
-        GameManager.instance.IncrementScore();
+        gameManager.IncrementScore(1);
         groundSpawner.SpawnTile();
-        Destroy(gameObject, 2);
-        
+        Destroy(gameObject, 3);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void SpawnObstacle()

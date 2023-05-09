@@ -6,10 +6,12 @@ public class EnemyController : MonoBehaviour
 {
     public float health = 100f;
     PlayerMovement playerMovement;
+    GameManager gameManager;
 
     private void Start()
     {
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
     private void Update()
     {
@@ -54,6 +56,7 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
+        gameManager.IncrementScore(10);
         Destroy(gameObject);
     }
 
