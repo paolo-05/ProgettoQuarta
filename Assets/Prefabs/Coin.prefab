@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1516206009078322, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
       propertyPath: m_Name
-      value: CoinGold Variant
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4802539185917164, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
       propertyPath: m_RootOrder
@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c604a2600ffd3348ac99038042f32c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 90
   coinValue: 1
+  rotationSpeed: 600

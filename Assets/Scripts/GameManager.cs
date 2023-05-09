@@ -1,5 +1,7 @@
 using UnityEngine;
+using Unity.UI;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int tilesFreeFromObstacles = 3;
     private int score = 0;
     public int thisGameCoins = 0;
+    public bool gameStarted = false;
+
     private int coins;
     private int personalBest;
 
@@ -15,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI personalBestText;
     [SerializeField] TextMeshProUGUI coinText;
+    [SerializeField] GameObject startGame;
 
     [SerializeField] PlayerMovement playerMovement;
 
@@ -39,6 +44,15 @@ public class GameManager : MonoBehaviour
         // Update the personal best text and coins text
         personalBestText.text = "Personal Best: " + personalBest.ToString();
         coinText.text = "Coins: " + coins.ToString();
+    }
+
+    private void Update()
+    {
+        if (!gameStarted && Input.anyKeyDown)
+        {
+            gameStarted = true;
+            startGame.SetActive(false);
+        }
     }
 
     public void IncrementScore(int amount)

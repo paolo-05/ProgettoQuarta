@@ -62,17 +62,16 @@ public class GroundTile : MonoBehaviour
         for (int i = 0; i < numCoins; i++)
         {
             Vector3 coinSpawnPosition = new Vector3(spawnPositions[spawnIndex], 1f, Random.Range(-3f, 3f));
-            GameObject coin = Instantiate(coinPrefab, transform.position + coinSpawnPosition, Quaternion.Euler(0, 90, 0), transform);
+            GameObject coin = Instantiate(coinPrefab, transform.position + coinSpawnPosition, Quaternion.identity, transform);
         }
     }
     void SpawnEnemies()
     {
         int numEnemies = Random.Range(0, 3);
         int spawmIndex = Random.Range(0, 3);
-        for (int i = 0; i < numEnemies; i++)
-        {
-            Vector3 enemySpawnPosition = new Vector3(spawnPositions[spawmIndex], 1f, Random.Range(-3, 3f));
-            GameObject enemy = Instantiate(enemyPrefab, transform.position + enemySpawnPosition, Quaternion.identity, transform);
-        }
+        
+        Vector3 enemySpawnPosition = new Vector3(spawnPositions[spawmIndex], 0f, Random.Range(-3, 3f));
+        GameObject enemy = Instantiate(enemyPrefab, transform.position + enemySpawnPosition, Quaternion.Euler(0, 180, 0), transform);
+        
     }
 }

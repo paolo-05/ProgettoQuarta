@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 3267757442900731561, guid: d209883baab7f194ca8b1f253564b4d5, type: 3}
   obstaclePrefab: {fileID: 7377684940107132011, guid: 5abf95edda999094da26fa90dfc9bcaf, type: 3}
-  enemyPrefab: {fileID: 3031362125245723654, guid: dc706a5d9d893a441b5b58fb83a9c329, type: 3}
+  enemyPrefab: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
 --- !u!65 &5472824595688240993
 BoxCollider:
   m_ObjectHideFlags: 0

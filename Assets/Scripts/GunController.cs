@@ -23,6 +23,7 @@ public class GunController : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.gameStarted) return;
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();

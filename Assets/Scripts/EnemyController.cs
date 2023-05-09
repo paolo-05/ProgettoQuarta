@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float health = 100f;
+    public Animator animator;
     PlayerMovement playerMovement;
     GameManager gameManager;
 
@@ -13,43 +14,14 @@ public class EnemyController : MonoBehaviour
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
-    private void Update()
-    {
-        // Get a reference to the material
-        Material material = gameObject.GetComponent<Renderer>().material;
-        switch (health)
-        {
-            case 100f:
-                // Change the albedo color
-                material.color = new Color32(255, 0, 0, 255);
-                break;
-            case 80f:
-                // Change the albedo color
-                material.color = new Color32(255, 60, 60, 255);
-                break;
-            case 60f:
-                // Change the albedo color
-                material.color = new Color32(255, 120, 120, 255);
-                break;
-            case 40f:
-                // Change the albedo color
-                material.color = new Color32(255, 180, 180, 255);
-                break;
-            case 20f:
-                // Change the albedo color
-                material.color = new Color32(255, 255, 255, 255);
-                break;
-            default:
-                break;
-        }
-    }
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Hit");
+        animator.SetTrigger("Take Damage");
         health -= damage;
         if (health <= 0f)
         {
+            animator.SetTrigger("Die");
             Die();
         }
     }
@@ -76,6 +48,7 @@ public class EnemyController : MonoBehaviour
 
         if (collision.gameObject.name == "Player")
         {
+            animator.SetTrigger("Attack 01");
             playerMovement.Die();
         }
     }

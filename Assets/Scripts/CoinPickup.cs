@@ -3,7 +3,7 @@ using UnityEngine;
 public class CoinPickup : MonoBehaviour
 {
     [SerializeField] int coinValue = 1;
-    public float rotationSpeed = 200f;
+    public float rotationSpeed = 800f;
 
     private void Update()
     {
