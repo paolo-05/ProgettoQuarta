@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public bool isUIElement = false;
+
     public float health = 100f;
     public Animator animator;
     PlayerMovement playerMovement;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetTrigger("Take Damage");
         health -= damage;
+        if (isUIElement) { return; }
         if (health <= 0f)
         {
             animator.SetTrigger("Die");

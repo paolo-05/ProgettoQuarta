@@ -7,10 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     public float speedIncreasePerPoint = 0.1f;
 
-    [SerializeField] float jumpHeight = 7.5f;
+    [SerializeField] float jumpHeight = 5f;
     [SerializeField] float crouchHeight = .5f;
     [SerializeField] Rigidbody rb;
-    [SerializeField] Animator animator;
 
     private bool isGrounded = false;
     private bool isCrouching = false;
@@ -19,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!alive) return;
         if (!GameManager.instance.gameStarted) return;
-        animator.SetTrigger("Running");
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + forwardMove);
     }
@@ -38,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Check if the player is grounded
-        if (Physics.Raycast(transform.position, Vector3.down, 1.5f))
+        if (Physics.Raycast(transform.position, Vector3.down, 2f))
         {
             isGrounded = true;
         }
@@ -50,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
         // Jump
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && isGrounded && !isCrouching)
         {
-            animator.SetTrigger("Jump");
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             isGrounded = false;
         }
@@ -58,13 +55,12 @@ public class PlayerMovement : MonoBehaviour
         // Crouch
         if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            animator.SetTrigger("Roll");
-            transform.localScale = new Vector3(1.5f, crouchHeight, 1.15f);
+            transform.localScale = new Vector3(1, crouchHeight, 1);
             isCrouching = true;
         }
         else
         {
-            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            transform.localScale = new Vector3(1, 1, 1);
             isCrouching = false;
         }
 
