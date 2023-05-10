@@ -8,12 +8,12 @@ public class EnemyController : MonoBehaviour
 
     public float health = 100f;
     public Animator animator;
-    PlayerMovement playerMovement;
+    PlayerController playerController;
     GameManager gameManager;
 
     private void Start()
     {
-        playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        playerController = GameObject.FindObjectOfType<PlayerController>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
@@ -34,7 +34,27 @@ public class EnemyController : MonoBehaviour
         gameManager.IncrementScore(10);
         Destroy(gameObject);
     }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.GetComponent<Obstacle>() != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        if (hit.gameObject.GetComponent<CoinPickup>() != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (hit.gameObject.name == "Player")
+        {
+            animator.SetTrigger("Attack 01");
+            playerController.Die();
+           
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Obstacle>() != null)
@@ -52,7 +72,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             animator.SetTrigger("Attack 01");
-            playerMovement.Die();
+            playerController.Die();
         }
     }
 }

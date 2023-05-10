@@ -10,7 +10,7 @@ public class GroundTile : MonoBehaviour
     GroundSpawner groundSpawner;
     GameManager gameManager;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
@@ -33,12 +33,6 @@ public class GroundTile : MonoBehaviour
         gameManager.IncrementScore(1);
         groundSpawner.SpawnTile();
         Destroy(gameObject, 3);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 

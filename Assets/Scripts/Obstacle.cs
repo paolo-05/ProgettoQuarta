@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    PlayerController playerController;
     public bool isCrouchObstacle = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        playerController = GameObject.FindObjectOfType<PlayerController>();
     }
-
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.name == "Player")
+        {
+            playerController.Die();
+        }
+    }
     private void OnCollisionEnter(Collision collision) 
     {
         if(collision.gameObject.name == "Player")
         {
-            playerMovement.Die();
+            playerController.Die();
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -12,7 +12,7 @@ public class GunController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
-    [SerializeField] Transform playerTransform;
+    
     [SerializeField] GameObject trigger;
 
     //public AudioClip shootSound;
@@ -27,11 +27,7 @@ public class GunController : MonoBehaviour
 
     void Update()
     {
-        if (playerTransform == null)
-        {
-            return;
-        }
-        gameObject.transform.position = playerTransform.position + new Vector3(0, 0, .8f);
+        if (isUIElement) return;
         if (!GameManager.instance.gameStarted) return;
         if (Input.GetButtonDown("Fire1"))
         {

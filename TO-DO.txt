@@ -1,9 +1,9 @@
-!!! - better crouching
-!!!!! - cambia tipo di variabili per le animazioni e aggiusta tutto
+!!! - continue the purchase zone
 
-!! - General UI
-!! - implement AUDIO
-!!! - find a title
+
+! - General UI
+! - implement AUDIO
+! - find a title
 ! - better player (now is a pill)
 ! - better obstacles (now are literal flying cubes)
 ! - how to play screen it's ez
