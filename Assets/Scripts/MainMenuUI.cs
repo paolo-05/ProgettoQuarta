@@ -8,27 +8,44 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject gun;
 
+    // Panels for responsive UI
+    [SerializeField] GameObject startPanel;
+    [SerializeField] GameObject optionsPanel;
+
     // Start the game by loading the game scene
     public void Play()
     {
+        Click();
+
         SceneManager.LoadScene(1);
     }
 
     // Open the settings menu (to be implemented)
     public void OpenSettings()
     {
-        // TODO: Implement this method
+        Click();
+
+        startPanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
     // Quit the game
     public void Exit()
     {
+        Click();
+
         // Quit the game, either by stopping the editor (if in editor mode) or by quitting the application
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
+    }
+
+    private void Start()
+    {
+        startPanel.SetActive(true);
+        optionsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,6 +56,11 @@ public class MainMenuUI : MonoBehaviour
         {
             gun.GetComponent<GunController>().Shoot();
         }
+    }
+    private void Click()
+    {
+        // Play the sound
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
     }
 
 }

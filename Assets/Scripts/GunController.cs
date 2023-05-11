@@ -15,15 +15,7 @@ public class GunController : MonoBehaviour
     [SerializeField] GameObject trigger; // The trigger GameObject used for animation
 
     // Private variables
-    private AudioSource audioSource; // The audio source component used for playing sound effects
     private float nextFire = 0; // The time at which the next shot can be fired
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Get the audio source component attached to this game object
-        audioSource = GetComponent<AudioSource>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -59,7 +51,7 @@ public class GunController : MonoBehaviour
             bulletController.speed = bulletSpeed;
             bulletController.damage = bulletDamage;
             // Play the shooting sound effect
-            // AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            FindObjectOfType<AudioManager>().Play("Shoot");
         }
         // Call the ResetTrigger function after 0.3 seconds for animation
         Invoke(nameof(ResetTrigger), .3f);

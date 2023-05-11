@@ -120,7 +120,13 @@ public class PlayerController : MonoBehaviour
     {
         if (hit.transform.CompareTag("Obstacle"))
         {
-            //FindObjectOfType<AudioManager>().PlaySound("GameOver");
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
+            GameManager.instance.gameOver = true;
+        }
+        if (hit.transform.CompareTag("Enemy"))
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
+            hit.gameObject.GetComponent<EnemyController>().Attack();
             GameManager.instance.gameOver = true;
         }
     }

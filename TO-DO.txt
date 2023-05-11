@@ -1,13 +1,11 @@
 !!! - continue the purchase zone
+!!! - set the user preferences for the volume in player prefs
+!!! - add return to main menu in the settings panel
 
 
-! - General UI
-! - implement AUDIO
-! - find a title
 ! - better player (now is a pill)
 ! - better obstacles (now are literal flying cubes)
 ! - how to play screen it's ez
-! - cambia font della schermata di gioco
 
 
 pubblish the game on simmer IO

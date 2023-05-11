@@ -49,6 +49,9 @@ public class Purchase : MonoBehaviour
 
     public void UpgradeBulletSpeed()
     {
+        // Play the sound
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
+
         // If the player has enough coins to upgrade the bullet speed, perform the upgrade
         if (coins > bulletSpeedCost)
         {
