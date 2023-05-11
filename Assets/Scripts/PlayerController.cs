@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
-    
+
     public float forwardSpeed = 10f;
     public float maxSpeed = 20f;
     public float laneDistance = 3f;//The distance between tow lanes
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public float gravity = -12f;
     public float jumpHeight = 1f;
-    public float slideDuration = 1.5f;
+    public float slideDuration = 1f;
     public float speedIncreasePerPoint = 0.1f;
 
     private CharacterController controller;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        Time.timeScale = 1.2f;
+        // Time.timeScale = 1.2f;
     }
 
     void Update()
@@ -120,8 +120,8 @@ public class PlayerController : MonoBehaviour
     {
         if (hit.transform.CompareTag("Obstacle"))
         {
-            //PlayerManager.gameOver = true;
             //FindObjectOfType<AudioManager>().PlaySound("GameOver");
+            GameManager.instance.gameOver = true;
         }
     }
 
@@ -151,6 +151,5 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         GameManager.instance.gameOver = true;
-        // vai avanti
-    } 
+    }
 }

@@ -1,31 +1,46 @@
+// import of necessary packages
 using UnityEngine;
-using Unity.UI;
-using TMPro;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance; // singleton instance
 
+    // Number of tiles free from obstacles at the beginning of the game
     public int tilesFreeFromObstacles = 3;
-    private int score = 0;
+
+    // Variables to keep track of game state
     public int thisGameCoins = 0;
     public bool gameStarted = false;
     public bool gameOver = false;
 
+    // Variables to keep track of score and coins
     private int coins;
     private int personalBest;
+    private int pastPersonalBest;
+    private int score = 0;
 
+    // Game objects in the scene
+    [SerializeField] GameObject scoreGameObject;
+    [SerializeField] GameObject bestScoreGameObject;
+    [SerializeField] GameObject coinsGameObject;
+    [SerializeField] GameObject startGame;
+    [SerializeField] GameObject purchasePanel;
+    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject personalBestGameObject;
 
+    // Text objects in the scene
     [SerializeField] Text scoreText;
     [SerializeField] Text personalBestText;
     [SerializeField] Text coinText;
-    [SerializeField] GameObject startGame;
+    [SerializeField] Text thisGameCoinsText;
+    [SerializeField] Text thisGameScoreText;
+
     [SerializeField] PlayerController playerController;
-    [SerializeField] GameObject purchasePanel;
 
     private void Awake()
     {
+        // Set up singleton instance
         if (instance == null)
         {
             instance = this;
@@ -44,11 +59,21 @@ public class GameManager : MonoBehaviour
 
         // Get the personal best score and total coins from PlayerPrefs
         personalBest = PlayerPrefs.GetInt("PersonalBest", 0);
+        pastPersonalBest = personalBest;
         coins = PlayerPrefs.GetInt("Coins", 0);
 
         // Update the personal best text and coins text
         personalBestText.text = personalBest.ToString();
         coinText.text = coins.ToString();
+
+        // only the total coins are visible at start
+        scoreGameObject.SetActive(false);
+        bestScoreGameObject.SetActive(false);
+        coinsGameObject.SetActive(true);
+
+        // activate the purchase panel and the 'press p to play'
+        purchasePanel.SetActive(true);
+        startGame.SetActive(true);
     }
 
     private void Update()
@@ -61,16 +86,38 @@ public class GameManager : MonoBehaviour
         {
             gameStarted = true;
             startGame.SetActive(false);
-            purchasePanel.SetActive(false );
-            playerController.GetComponent<Transform>().position = new Vector3(0, 1, 5);
+            purchasePanel.SetActive(false);
+            scoreGameObject.SetActive(true);
+            bestScoreGameObject.SetActive(true);
+        }
+
+        if (gameOver)
+        {
+            // Hide game objects and show game over panel
+            purchasePanel.SetActive(false);
+            scoreGameObject.SetActive(false);
+            bestScoreGameObject.SetActive(false);
+            coinsGameObject.SetActive(true);
+
+            gameOverPanel.SetActive(true);
+            thisGameCoinsText.text = thisGameCoins.ToString();
+            thisGameScoreText.text = score.ToString();
+
+            // If the player beat their personal best score, show a message
+            if (score > pastPersonalBest)
+            {
+                personalBestGameObject.SetActive(true);
+            }
         }
     }
 
     public void IncrementScore(int amount)
     {
+        // Increase the score and update the score text
         score += amount;
         scoreText.text = score.ToString();
 
+        // If the player beat their personal best score, update the personal best text
         if (score > personalBest)
         {
             personalBest = score;
@@ -81,11 +128,13 @@ public class GameManager : MonoBehaviour
 
     public void IncrementCoins(int amount)
     {
+        // Increase the coins and update the coins text
         thisGameCoins += amount;
         coins += amount;
         PlayerPrefs.SetInt("Coins", coins);
         coinText.text = coins.ToString();
 
+        // increase the player speed
         playerController.forwardSpeed += playerController.speedIncreasePerPoint;
     }
 }
