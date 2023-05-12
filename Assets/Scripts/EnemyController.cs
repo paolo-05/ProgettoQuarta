@@ -8,16 +8,6 @@ public class EnemyController : MonoBehaviour
     public float health = 100f;
     public Animator animator;
 
-    // Private variables
-    private GameManager gameManager;
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        // Find and store reference to the GameManager
-        gameManager = GameObject.FindObjectOfType<GameManager>();
-    }
-
     // Function to be called when the enemy takes damage
     public void TakeDamage(float damage)
     {
@@ -48,10 +38,10 @@ public class EnemyController : MonoBehaviour
         animator.SetTrigger("Die");
 
         // Call the IncrementScore function of the GameManager to increment the score by 10
-        gameManager.IncrementScore(10);
+        GameManager.instance.IncrementScore(10);
 
-        // Destroy this enemy game object after a half of a second 
-        Destroy(gameObject, .5f);
+        // Destroy this enemy game object
+        Destroy(gameObject);
     }
 
     // Function called when the enemy's collider collides with something

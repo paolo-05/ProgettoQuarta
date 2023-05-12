@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
 {
-    [SerializeField] int coinValue = 1;
+    [SerializeField] public int coinValue = 1;
     public float rotationSpeed = 800f;
 
     // Rotate the coin

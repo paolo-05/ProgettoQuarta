@@ -1,10 +1,8 @@
-!!! - continue the purchase zone
-!!! - set the user preferences for the volume in player prefs
-!!! - add return to main menu in the settings panel
+!!! - continue the purchase zone (bullet damage, bullet range, gun fire rate)
+! - maybe add a pause button
 
 
 ! - better player (now is a pill)
-! - better obstacles (now are literal flying cubes)
 ! - how to play screen it's ez
 
 

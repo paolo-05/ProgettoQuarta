@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
     {
         // Move the bullet forward
         Vector3 moveDirection = transform.TransformDirection(Vector3.left); // Get the forward direction of the bullet
-        controller.Move(moveDirection * speed * Time.deltaTime); // Move the bullet in the forward direction
+        controller.Move(speed * Time.deltaTime * moveDirection); // Move the bullet in the forward direction
 
         // Check if the bullet has reached its maximum range
         distanceTravelled += speed * Time.deltaTime; // Add the distance travelled in this frame to the total distance travelled
@@ -32,6 +32,12 @@ public class BulletController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        // Check the collision with an obstacle
+        if (hit.transform.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+        
         // Check if the bullet has hit an enemy
         EnemyController enemy = hit.collider.GetComponent<EnemyController>(); // Get the EnemyController component from the collider of the object the bullet hit
         if (enemy != null) // If the object has an EnemyController component

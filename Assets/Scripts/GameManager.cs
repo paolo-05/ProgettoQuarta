@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private int coins;
     private int personalBest;
     private int pastPersonalBest;
-    private int score = 0;
+    public int score = 0;
 
     // Game objects in the scene
     [SerializeField] GameObject scoreGameObject;
