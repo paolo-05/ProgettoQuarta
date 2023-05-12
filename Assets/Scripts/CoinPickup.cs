@@ -24,11 +24,13 @@ public class CoinPickup : MonoBehaviour
         // Check if the coin collided with the player, increment the player's coins and destroy the coin
         if (collision.gameObject.name == "Player")
         {
-
             // Play the sound
             FindObjectOfType<AudioManager>().Play("CoinPickup");
 
+            // increment the score
             GameManager.instance.IncrementCoins(coinValue);
+
+            // destroy the coin
             Destroy(gameObject);
         }
     }

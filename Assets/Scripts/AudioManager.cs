@@ -1,14 +1,32 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
-    public Sound[] musics;
+    [SerializeField]
+    private Sound[] sounds;
+    [SerializeField]
+    private Sound[] musics;
 
-    public AudioMixerGroup music;
-    public AudioMixerGroup SFX;
+    [SerializeField]
+    private AudioMixer audioMixer;
+
+    [SerializeField]
+    private AudioMixerGroup music;
+    [SerializeField]
+    private AudioMixerGroup SFX;
+
+    private float volume;
+
+
+    [SerializeField]
+    private Slider masterSlider;
+    [SerializeField]
+    private Slider musicSlider;
+    [SerializeField]
+    private Slider SFXSlider;
 
     private void Awake()
     {
@@ -36,7 +54,34 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("MasterVolume"))
+        {
+            float masterVolume = PlayerPrefs.GetFloat("MasterVolume");
+            if (masterSlider != null) masterSlider.value = masterVolume;
+            audioMixer.SetFloat("Master", masterVolume);
+        }
+
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
+            if (musicSlider != null) musicSlider.value = musicVolume;
+            audioMixer.SetFloat("Music", musicVolume);
+        }
+
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
+            if (SFXSlider != null) SFXSlider.value = sfxVolume;
+            audioMixer.SetFloat("SFX", sfxVolume);
+        }
+
         PlayMusic();
+    }
+
+    private void Update()
+    {
+        audioMixer.GetFloat("Master", out volume);
+        PlayerPrefs.SetFloat("Master", volume);
     }
 
     public void Play(string name)

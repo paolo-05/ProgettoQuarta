@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2825,6 +2825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1929607800896240217, guid: 09e8b0633eb95f44aa7b673802342cba, type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 72b749cb2257d574abd5d145ddadb3b0, type: 2}
     - target: {fileID: 1929607800896240218, guid: 09e8b0633eb95f44aa7b673802342cba, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2949,6 +2953,14 @@ PrefabInstance:
     - target: {fileID: 4934287543730947181, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934287543730947183, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
+      propertyPath: gravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934287543730947183, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
+      propertyPath: slideDuration
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}

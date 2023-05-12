@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
     public Animator animator;
-    public float gravity = -12f;
+    public float gravity = -20f;
     public float jumpHeight = 1f;
-    public float slideDuration = 1f;
+    public float slideDuration = 1.5f;
     public float speedIncreasePerPoint = 0.1f;
 
     private CharacterController controller;
@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        // Time.timeScale = 1.2f;
     }
 
     void Update()
@@ -110,7 +109,7 @@ public class PlayerController : MonoBehaviour
         // animator.SetBool("isSliding", false);
         // animator.SetTrigger("jump");
         controller.center = Vector3.zero;
-        controller.height = 2;
+        controller.height = 2f;
         isSliding = false;
 
         velocity.y = Mathf.Sqrt(jumpHeight * 2 * -gravity);

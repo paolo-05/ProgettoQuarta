@@ -5,6 +5,7 @@ public class GroundTile : MonoBehaviour
     // Game objects to be spawned on this tile
     [SerializeField] GameObject coinPrefab;
     [SerializeField] GameObject obstaclePrefab;
+    [SerializeField] GameObject crouchObstaclePrefab;
     [SerializeField] GameObject enemyPrefab;
 
     // Positions where the objects can be spawned
@@ -51,12 +52,27 @@ public class GroundTile : MonoBehaviour
         int obstacleSpawnIndex = Random.Range(2, 5);
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
         bool isCrouchObstacle = Random.value > 0.5f;
-        float obstacleYPosition = isCrouchObstacle ? 2f : 0.5f;
-        spawnPoint.position = new Vector3(spawnPoint.position.x, obstacleYPosition, spawnPoint.position.z);
+        float obstacleYPosition;
+        if (!isCrouchObstacle)
+        {
+            obstacleYPosition = 0.8f;
+            spawnPoint.position = new Vector3(0, obstacleYPosition, spawnPoint.position.z);
 
-        // Spawn the obstacle and set its type
-        GameObject obstacle = Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
-        obstacle.GetComponent<Obstacle>().isCrouchObstacle = isCrouchObstacle;
+            // Spawn the obstacle and set its type
+            GameObject obstacle = Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+            return;
+        }
+        else
+        {
+            obstacleYPosition = 2f;
+            spawnPoint.position = new Vector3(spawnPoint.position.x, obstacleYPosition, spawnPoint.position.z);
+
+            // Spawn the obstacle and set its type
+            GameObject obstacle = Instantiate(crouchObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+            obstacle.GetComponent<Obstacle>().isCrouchObstacle = isCrouchObstacle;
+        }
+
+
     }
 
     // Spawn coins on this tile

@@ -58,14 +58,14 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the collider is an obstacle, and if it is, destroy this enemy game object
-        if (collision.gameObject.GetComponent<Obstacle>() != null)
+        if (collision.transform.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
             return;
         }
 
         // Check if the collider is a coin, and if it is, destroy this enemy game object
-        if (collision.gameObject.GetComponent<CoinPickup>() != null)
+        if (collision.transform.CompareTag("Coin"))
         {
             Destroy(gameObject);
             return;

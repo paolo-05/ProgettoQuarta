@@ -20,13 +20,23 @@ public class MainMenuUI : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // Open the settings menu (to be implemented)
+    // Open the settings menu
     public void OpenSettings()
     {
         Click();
 
+        // activate the settings panel and hide the main panel
         startPanel.SetActive(false);
         optionsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        Click();
+
+        // activate the main panel and deactivate the settings panel
+        startPanel.SetActive(true);
+        optionsPanel.SetActive(false);
     }
 
     // Quit the game

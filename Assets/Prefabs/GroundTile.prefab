@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 3267757442900731561, guid: d209883baab7f194ca8b1f253564b4d5, type: 3}
-  obstaclePrefab: {fileID: 7377684940107132011, guid: 5abf95edda999094da26fa90dfc9bcaf, type: 3}
+  obstaclePrefab: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+  crouchObstaclePrefab: {fileID: 7377684940107132011, guid: 5abf95edda999094da26fa90dfc9bcaf, type: 3}
   enemyPrefab: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
 --- !u!65 &5472824595688240993
 BoxCollider:
