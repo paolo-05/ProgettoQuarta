@@ -15,7 +15,7 @@ For moving the player in the world space you can simply use WASD or the arrow ke
 
 ### Basic game features
 
-<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/demo2.png">
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/demo1.png">
 
 - All enemies have animations.
 - The coins are always spinning on the y axis.
