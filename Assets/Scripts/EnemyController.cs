@@ -26,7 +26,6 @@ public class EnemyController : MonoBehaviour
         // Check if the enemy's health is zero or less, and if it is, trigger the "Die" animation and call the Die() function
         if (health <= 0f)
         {
-            animator.SetTrigger("Die");
             Die();
         }
     }
@@ -37,11 +36,18 @@ public class EnemyController : MonoBehaviour
         // play the die animation
         animator.SetTrigger("Die");
 
+        // remove the collider
+        BoxCollider boxCollider = gameObject.GetComponent<BoxCollider>();
+        if (boxCollider != null)
+        {
+            Destroy(boxCollider);
+        }
+
         // Call the IncrementScore function of the GameManager to increment the score by 10
         GameManager.instance.IncrementScore(10);
 
         // Destroy this enemy game object
-        Destroy(gameObject);
+        Destroy(gameObject, 1.2f);
     }
 
     // Function called when the enemy's collider collides with something

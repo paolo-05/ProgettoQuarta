@@ -1,4 +1,3 @@
-!!! - continue the purchase zone (bullet damage, bullet range, gun fire rate)
 ! - maybe add a pause button
 
 

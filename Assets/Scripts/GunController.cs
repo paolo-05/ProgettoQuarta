@@ -7,9 +7,9 @@ public class GunController : MonoBehaviour
     // Public variables
     public bool isUIElement = false; // Determines if the gun is part of a UI element
     public float fireRate = 0.1f; // The time interval between two consecutive shots
-    public float bulletDamage = 10f; // The damage inflicted by each bullet
+    public float bulletDamage = 30f; // The damage inflicted by each bullet
     public float bulletRange = 20f; // The maximum distance the bullet can travel
-    public float bulletSpeed = 20f; // The speed at which the bullet travels
+    public float bulletSpeed = 1000f; // The speed at which the bullet travels
     public GameObject bulletPrefab; // The prefab for the bullet
     public Transform bulletSpawnPoint; // The spawn point for the bullet
     [SerializeField] GameObject trigger; // The trigger GameObject used for animation
