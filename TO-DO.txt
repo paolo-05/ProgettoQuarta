@@ -1,4 +1,4 @@
-! - maybe add a pause button
+!! - find better icons for upgrades
 
 
 ! - better player (now is a pill)

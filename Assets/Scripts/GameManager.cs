@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         // reset the best score and coins
         // PlayerPrefs.SetInt("PersonalBest", 0);
-        // PlayerPrefs.SetInt("Coins", 0);
+        PlayerPrefs.SetInt("Coins", 1000);
 
         // Get the personal best score and total coins from PlayerPrefs
         personalBest = PlayerPrefs.GetInt("PersonalBest", 0);
