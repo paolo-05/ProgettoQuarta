@@ -57,18 +57,6 @@ public class Purchase : MonoBehaviour
 
     void Start()
     {
-        // When the player loads the game the first time
-        if (!PlayerPrefs.HasKey("BulletSpeed"))
-        {
-            PlayerPrefs.SetFloat("BulletSpeed", 100f);
-            PlayerPrefs.SetFloat("BulletSpeedCost", 20f);
-            PlayerPrefs.SetFloat("BulletRange", 20f);
-            PlayerPrefs.SetFloat("BulletRangeCost", 20f);
-            PlayerPrefs.SetFloat("BulletDamage", 30f);
-            PlayerPrefs.SetFloat("BulletDamageCost", 20f);
-            PlayerPrefs.SetFloat("FireRate", 0.5f);
-            PlayerPrefs.SetFloat("FireRateCost", 20f);
-        }
         // get te bullet stats and calculate the upgrade costs, set the current level of upgrades
         bulletSpeed = PlayerPrefs.GetFloat("BulletSpeed");
         bulletSpeedCost = PlayerPrefs.GetFloat("BulletSpeedCost");

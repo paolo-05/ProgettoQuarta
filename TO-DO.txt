@@ -1,4 +1,4 @@
-!! - find better icons for upgrades
+! - finish modal dialog
 
 
 ! - better player (now is a pill)

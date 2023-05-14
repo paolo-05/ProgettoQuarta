@@ -54,6 +54,8 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("Coins")) FindObjectOfType<SettingsMenu>().ResetProgress();
+
         startPanel.SetActive(true);
         optionsPanel.SetActive(false);
     }
@@ -72,5 +74,4 @@ public class MainMenuUI : MonoBehaviour
         // Play the sound
         FindObjectOfType<AudioManager>().Play("ButtonClick");
     }
-
 }

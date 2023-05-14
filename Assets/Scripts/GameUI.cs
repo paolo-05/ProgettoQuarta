@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Need this to manage scene changes
 
@@ -8,6 +9,14 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject startGame;
     [SerializeField] GameObject purchasePanel;
     [SerializeField] GameObject settingsPanel;
+    [SerializeField] GameObject alert;
+
+    private ModalDialog md;
+
+    private void Start()
+    {
+        md = alert.GetComponent<ModalDialog>();
+    }
 
     // Function to start the game again
     public void PlayAgain()
@@ -21,10 +30,7 @@ public class GameUI : MonoBehaviour
     // Function to go back to the main menu
     public void MainMenu()
     {
-        Click();
-
-        // Load scene with index 0 (the main menu scene)
-        SceneManager.LoadScene(0);
+        md.ShowDialog();
     }
 
     public void OpenSettings()
