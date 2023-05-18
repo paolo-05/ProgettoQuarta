@@ -4,16 +4,18 @@ using UnityEngine.UI;
 
 public class ModalDialog : MonoBehaviour
 {
-    public GameObject modalPanelObject;
-    public Button yesButton;
-    public Button noButton;
-    public Button cancelButton;
+    [SerializeField] GameObject modalPanelObject;
+    // [SerializeField] GameObject blockerPanelObject;
+    [SerializeField] Button yesButton;
+    [SerializeField] Button noButton;
+    [SerializeField] Button cancelButton;
 
     private int scene;
 
     private void Start()
     {
-        modalPanelObject.SetActive(false);
+        // modalPanelObject.SetActive(false);
+        // blockerPanelObject.SetActive(false);
         yesButton.onClick.AddListener(OnYesClicked);
         noButton.onClick.AddListener(OnNoClicked);
         cancelButton.onClick.AddListener(OnNoClicked);
@@ -22,12 +24,15 @@ public class ModalDialog : MonoBehaviour
     public void ShowDialog()
     {
         modalPanelObject.SetActive(true);
+        // blockerPanelObject.SetActive(true);
+        // blockerPanelObject.GetComponent<Canvas>().sortingOrder = modalPanelObject.GetComponent<Canvas>().sortingOrder - 1;
     }
 
     public void OnYesClicked()
     {
         Click();
         modalPanelObject.SetActive(false);
+        // blockerPanelObject.SetActive(false);
 
 
         scene = SceneManager.GetActiveScene().buildIndex;
@@ -47,6 +52,7 @@ public class ModalDialog : MonoBehaviour
         Click();
 
         // Do something when the user clicks the No button.
+        // blockerPanelObject.SetActive(false);
         modalPanelObject.SetActive(false);
 
     }

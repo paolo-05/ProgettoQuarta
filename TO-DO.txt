@@ -1,4 +1,4 @@
-! - finish modal dialog
+! - better pause menu, fix resume and add alert to the option main menu
 
 
 ! - better player (now is a pill)

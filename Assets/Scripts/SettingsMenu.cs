@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
+    [SerializeField] ModalDialog alert;
 
     public void SetMasterVolume(float volume)
     {
@@ -39,11 +40,15 @@ public class SettingsMenu : MonoBehaviour
 
         PlayerPrefs.SetFloat("BulletDamage", 30f);
         PlayerPrefs.SetFloat("BulletDamageCost", 20f);
-        
+
         PlayerPrefs.SetFloat("FireRate", 0.5f);
         PlayerPrefs.SetFloat("FireRateCost", 20f);
 
         PlayerPrefs.SetInt("Coins", 0);
         PlayerPrefs.SetInt("PersonalBest", 0);
+    }
+    public void OpenDialog()
+    {
+        alert.ShowDialog();
     }
 }

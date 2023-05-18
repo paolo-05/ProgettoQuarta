@@ -9,14 +9,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject startGame;
     [SerializeField] GameObject purchasePanel;
     [SerializeField] GameObject settingsPanel;
-    [SerializeField] GameObject alert;
-
-    private ModalDialog md;
-
-    private void Start()
-    {
-        md = alert.GetComponent<ModalDialog>();
-    }
+    [SerializeField] ModalDialog alert;
 
     // Function to start the game again
     public void PlayAgain()
@@ -30,13 +23,13 @@ public class GameUI : MonoBehaviour
     // Function to go back to the main menu
     public void MainMenu()
     {
-        md.ShowDialog();
+        alert.ShowDialog();
     }
 
     public void OpenSettings()
     {
         Click();
-        
+
         // hide the other elements in UI
         coinsGameObject.SetActive(false);
         startGame.SetActive(false);
