@@ -1,15 +1,6 @@
 # Forest Runner: Endless Adventures
 
-## Starting screen
-  <img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104834.png">
-  
-## Settings
-
-<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104929.png">
-
-## The purchase buttons, available before the game starts
-
-<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104955.png">
+*the game is playeble [here](https://simmer.io/@paoloBianchessi/forest-runner-endless-adventures)*
 
 ## Project overview
 
@@ -24,8 +15,7 @@ For moving the player in the world space you can simply use WASD or the arrow ke
 
 ## Basic game features
 
-
-
+- The player is fully animated
 - All enemies have animations.
 - The coins are always spinning on the y axis.
 - There are two types of obstacle: one that must be jumped over and one where the player must crouch.
@@ -40,3 +30,28 @@ all the audio clips are attached to that Game Object.
 
 In the settings, there are 3 sliders, one for the master volume, one for the music and one for the SFX sounds, the user, by interracting with them, can adjust the volume. 
 At game re-opening all the setting will be saved. This was made possible by using again the `PlayerPrefs` database.
+
+## Following, there are some screenshots of the game.
+
+### Starting screen
+  <img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104834.png">
+  
+### Settings
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104929.png">
+
+### The purchase buttons, available before the game starts
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104955.png">
+
+### Actual game screenshot
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20105034.png">
+
+### The game over panel
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20105057.png">
+
+### The pause panel
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20105122.png">
