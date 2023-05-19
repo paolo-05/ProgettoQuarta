@@ -88,11 +88,15 @@ public class Purchase : MonoBehaviour
         else
         {
             bulletSpeedCostText.text = $"Upgrade cost: {Math.Round(bulletSpeedCost)}";
-            // check if the player can upgrade
-            if (coins > bulletSpeedCost)
-            {
-                upgradeBulletSpeed.interactable = true;
-            }
+        }
+        // check if the player can upgrade
+        if (coins > bulletSpeedCost)
+        {
+            upgradeBulletSpeed.interactable = true;
+        }
+        else
+        {
+            upgradeBulletSpeed.interactable = false;
         }
 
         // check if the player maxed out bullet damage
@@ -104,11 +108,15 @@ public class Purchase : MonoBehaviour
         else
         {
             bulletDamageCostText.text = $"Upgrade cost: {Math.Round(bulletDamageCost)}";
-            // check if the player can upgrade
-            if (coins > bulletDamageCost)
-            {
-                upgradeBulletDamage.interactable = true;
-            }
+        }
+        // check if the player can upgrade
+        if (coins > bulletDamageCost)
+        {
+            upgradeBulletDamage.interactable = true;
+        }
+        else
+        {
+            upgradeBulletDamage.interactable = false;
         }
 
         // check if the player maxed out bullet range
@@ -120,12 +128,17 @@ public class Purchase : MonoBehaviour
         else
         {
             bulletRangeCostText.text = $"Upgrade cost: {Math.Round(bulletRangeCost)}";
-            // check if the player can upgrade
-            if (coins > bulletRangeCost)
-            {
-                upgradeBulletRange.interactable = true;
-            }
         }
+        // check if the player can upgrade
+        if (coins > bulletRangeCost)
+        {
+            upgradeBulletRange.interactable = true;
+        }
+        else 
+        {
+            upgradeBulletRange.interactable = false;
+        }
+
 
         // check if the player maxed out fire rate
         if (fireRate == fireRateMin)
@@ -136,11 +149,15 @@ public class Purchase : MonoBehaviour
         else
         {
             fireRateCostText.text = $"Upgrade cost: {Math.Round(fireRateCost, 3)}";
-            // check if the player can upgrade
-            if (coins > bulletRangeCost)
-            {
-                upgradeFireRate.interactable = true;
-            }
+        }
+        // check if the player can upgrade
+        if (coins > bulletRangeCost)
+        {
+            upgradeFireRate.interactable = true;
+        }
+        else
+        {
+            upgradeFireRate.interactable = false;
         }
     }
 

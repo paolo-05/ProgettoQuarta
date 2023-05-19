@@ -24,8 +24,6 @@ public class ModalDialog : MonoBehaviour
     public void ShowDialog()
     {
         modalPanelObject.SetActive(true);
-        // blockerPanelObject.SetActive(true);
-        // blockerPanelObject.GetComponent<Canvas>().sortingOrder = modalPanelObject.GetComponent<Canvas>().sortingOrder - 1;
     }
 
     public void OnYesClicked()

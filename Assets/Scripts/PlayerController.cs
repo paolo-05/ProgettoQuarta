@@ -125,9 +125,7 @@ public class PlayerController : MonoBehaviour
         }
         if (hit.transform.CompareTag("Enemy"))
         {
-            FindObjectOfType<AudioManager>().Play("PlayerDeath");
-            hit.gameObject.GetComponent<EnemyController>().Attack();
-            GameManager.instance.gameOver = true;
+            StartCoroutine(EnemyCollision(hit));
         }
     }
 
@@ -146,6 +144,18 @@ public class PlayerController : MonoBehaviour
         controller.height = 2;
         isSliding = false;
     }
+
+    private IEnumerator EnemyCollision(ControllerColliderHit hit)
+    {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        hit.gameObject.GetComponent<EnemyController>().Attack();
+        
+        yield return new WaitForSeconds(0.3f);
+
+        GameManager.instance.gameOver = true;
+        Destroy(gameObject);
+    }
+
     public void Die()
     {
         GameManager.instance.gameOver = true;

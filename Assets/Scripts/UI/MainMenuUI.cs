@@ -1,6 +1,8 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class MainMenuUI : MonoBehaviour
     // Panels for responsive UI
     [SerializeField] GameObject startPanel;
     [SerializeField] GameObject optionsPanel;
+    [SerializeField] GameObject loadingPanel;
+    [SerializeField] Slider loadingSlider;
+    [SerializeField] Text progressText;
 
     // Start the game by loading the game scene
     public void Play()
@@ -54,6 +59,8 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
+
         if (!PlayerPrefs.HasKey("Coins")) FindObjectOfType<SettingsMenu>().ResetProgress();
 
         startPanel.SetActive(true);
@@ -69,6 +76,32 @@ public class MainMenuUI : MonoBehaviour
             gun.GetComponent<GunController>().Shoot();
         }
     }
+
+    public void LoadLevel(int sceneIndex)
+    {
+        Click();
+
+        startPanel.SetActive(false);
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
+
+    IEnumerator LoadAsynchronously(int sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        loadingPanel.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+
+            loadingSlider.value = progress;
+            progressText.text = $"{progress * 100f}%";
+
+            yield return null;
+        }
+    }
+
     private void Click()
     {
         // Play the sound

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int thisGameCoins = 0;
     public bool gameStarted = false;
     public bool gameOver = false;
+    public bool isPaused = false;
 
     // Variables to keep track of score and coins
     private int coins;
@@ -31,7 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject purchasePanel;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject personalBestGameObject;
-    [SerializeField] GameObject pauseMenu;
 
     // Text objects in the scene
     [SerializeField] Text scoreText;
@@ -39,12 +39,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text coinText;
     [SerializeField] Text thisGameCoinsText;
     [SerializeField] Text thisGameScoreText;
-    [SerializeField] Text countdownText;
 
     [SerializeField] PlayerController playerController;
 
-    private bool isPaused = false;
-
+    private GameUI gameUI;
 
     private void Awake()
     {
@@ -61,6 +59,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
+
+        gameUI = FindObjectOfType<GameUI>();
         // reset the best score and coins
         // PlayerPrefs.SetInt("PersonalBest", 0);
         // PlayerPrefs.SetInt("Coins", 1000);
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
         bestScoreGameObject.SetActive(false);
         coinsGameObject.SetActive(true);
 
-        // activate the purchase panel and the 'press p to play'
+        // activate the purchase panel and the 'press P to play'
         purchasePanel.SetActive(true);
         startGame.SetActive(true);
     }
@@ -122,9 +123,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !gameOver && gameStarted)
         {
             if (isPaused)
-                ResumeGame();
+                gameUI.ResumeGame();
             else
-                PauseGame();
+                gameUI.PauseGame();
         }
     }
 
@@ -153,55 +154,5 @@ public class GameManager : MonoBehaviour
 
         // increase the player speed
         playerController.forwardSpeed += playerController.speedIncreasePerPoint;
-    }
-
-    public void PauseGame()
-    {
-        Time.timeScale = 0f; // Stop the game time
-        isPaused = true;
-        pauseMenu.SetActive(true);
-    }
-
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f; // Resume the game time
-        isPaused = false;
-        pauseMenu.SetActive(false);
-    }
-
-    public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void MainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
-    }
-
-    public void StartCountdown()
-    {
-        StartCoroutine(CountdownCoroutine());
-    }
-
-    IEnumerator CountdownCoroutine()
-    {
-        countdownText.gameObject.SetActive(true);
-        countdownText.text = "3";
-
-        yield return new WaitForSeconds(1f);
-
-        countdownText.text = "2";
-
-        yield return new WaitForSeconds(1f);
-
-        countdownText.text = "1";
-
-        yield return new WaitForSeconds(1f);
-
-        countdownText.gameObject.SetActive(false);
-        ResumeGame();
-    }
+    }  
 }

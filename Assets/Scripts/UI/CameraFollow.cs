@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance.gameOver) { return; }
         // If the game hasn't started yet, move the camera to a fixed position
         if (!GameManager.instance.gameStarted)
         {

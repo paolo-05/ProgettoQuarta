@@ -6,24 +6,6 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] ModalDialog alert;
 
-    public void SetMasterVolume(float volume)
-    {
-        audioMixer.SetFloat("Master", volume);
-        PlayerPrefs.SetFloat("MasterVolume", volume);
-    }
-
-    public void SetMusicVolume(float volume)
-    {
-        audioMixer.SetFloat("Music", volume);
-        PlayerPrefs.SetFloat("MusicVolume", volume);
-    }
-
-    public void SetSFXVolume(float volume)
-    {
-        audioMixer.SetFloat("SFX", volume);
-        PlayerPrefs.SetFloat("SFXVolume", volume);
-    }
-
     public void ShowAlert()
     {
         FindObjectOfType<AudioManager>().Play("ButtonClick");

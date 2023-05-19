@@ -1,4 +1,5 @@
 // Import necessary packages
+using System.Collections;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -26,12 +27,12 @@ public class EnemyController : MonoBehaviour
         // Check if the enemy's health is zero or less, and if it is, trigger the "Die" animation and call the Die() function
         if (health <= 0f)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
     // Function to be called when the enemy dies
-    void Die()
+    private IEnumerator Die()
     {
         // play the die animation
         animator.SetTrigger("Die");
@@ -46,8 +47,10 @@ public class EnemyController : MonoBehaviour
         // Call the IncrementScore function of the GameManager to increment the score by 10
         GameManager.instance.IncrementScore(10);
 
+        yield return new WaitForSeconds(1.2f);
+
         // Destroy this enemy game object
-        Destroy(gameObject, 1.2f);
+        Destroy(gameObject);
     }
 
     // Function called when the enemy's collider collides with something

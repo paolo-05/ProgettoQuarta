@@ -1,9 +1,4 @@
-! - better pause menu, fix resume and add alert to the option main menu
-
-
-! - better player (now is a pill)
-! - how to play screen it's ez
-
+! - https://www.youtube.com/watch?v=YMj2qPq9CP8 e https://www.youtube.com/watch?v=CE9VOZivb3I
 
 pubblish the game on simmer IO
 
