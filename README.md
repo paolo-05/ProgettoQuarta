@@ -1,6 +1,15 @@
 # Forest Runner: Endless Adventures
 
-    ![](https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/demo2.png)
+## Starting screen
+  <img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104834.png">
+  
+## Settings
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104929.png">
+
+## The purchase buttons, available before the game starts
+
+<img src="https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/Screenshot%202023-05-19%20104955.png">
 
 ## Project overview
 
@@ -15,7 +24,7 @@ For moving the player in the world space you can simply use WASD or the arrow ke
 
 ## Basic game features
 
-    ![](https://github.com/paolo-05/ProgettoQuarta/blob/master/Demo/demo1.png)
+
 
 - All enemies have animations.
 - The coins are always spinning on the y axis.
