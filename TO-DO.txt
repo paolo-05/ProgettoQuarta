@@ -1,6 +1,4 @@
-! - https://www.youtube.com/watch?v=YMj2qPq9CP8 e https://www.youtube.com/watch?v=CE9VOZivb3I
-
-pubblish the game on simmer IO
+! - fix the layout
 
 
 the esclamation marks are for their priority
