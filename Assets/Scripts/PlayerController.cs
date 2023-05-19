@@ -29,16 +29,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!GameManager.instance.gameStarted || GameManager.instance.gameOver)
+        {
+            animator.SetBool("isGameStarted", false);
             return;
+        }
 
-        //animator.SetBool("isGameStarted", true);
+        animator.SetBool("isGameStarted", true);
         move.z = forwardSpeed;
 
         isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, 0.17f, groundLayer);
 
-
-        //isGrounded = Physics.CheckSphere(groundCheck.position, 0.17f, groundLayer);
-        // animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("isGrounded", isGrounded);
         if (isGrounded && velocity.y < 0)
             velocity.y = -1f;
 
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position != targetPosition)
         {
             Vector3 diff = targetPosition - transform.position;
-            Vector3 moveDir = diff.normalized * 30 * Time.deltaTime;
+            Vector3 moveDir = 30 * Time.deltaTime * diff.normalized;
             if (moveDir.sqrMagnitude < diff.magnitude)
                 controller.Move(moveDir);
             else
@@ -106,8 +107,8 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         StopCoroutine(Slide());
-        // animator.SetBool("isSliding", false);
-        // animator.SetTrigger("jump");
+        animator.SetBool("isSliding", false);
+        animator.SetTrigger("jump");
         controller.center = Vector3.zero;
         controller.height = 2f;
         isSliding = false;
@@ -132,25 +133,17 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Slide()
     {
-        /* only for testing */
-        transform.localScale = new Vector3(1, .5f, 1);
-
         isSliding = true;
-        // animator.SetBool("isSliding", true);
+        animator.SetBool("isSliding", true);
         yield return new WaitForSeconds(0.25f / Time.timeScale);
+
         controller.center = new Vector3(0, -0.5f, 0);
         controller.height = 1;
-
         yield return new WaitForSeconds((slideDuration - 0.25f) / Time.timeScale);
 
-        // animator.SetBool("isSliding", false);
-
-        /* only for testing */
-        transform.localScale = new Vector3(1, 1, 1);
-
+        animator.SetBool("isSliding", false);
         controller.center = Vector3.zero;
         controller.height = 2;
-
         isSliding = false;
     }
     public void Die()
