@@ -1,6 +1,7 @@
 # Forest Runner: Endless Adventures
 
 *the game is playeble [here](https://simmer.io/@paoloBianchessi/forest-runner-endless-adventures)*
+*the docs are [here](https://paolo-05.github.io/ProgettoQuarta/)*
 
 ## Project overview
 
