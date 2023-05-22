@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("ani",["Variable"],[["animator",,[["EnemyController",,,,0,"File:EnemyController.cs:EnemyController.animator","CSharpClass:EnemyController:animator"],["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.animator","CSharpClass:PlayerController:animator"]]]]);

@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("inc",["Function"],[["IncrementCoins",,[["GameManager",,,,0,"File:GameManager.cs:GameManager.IncrementCoins","CSharpClass:GameManager:IncrementCoins"]]],["IncrementScore",,[["GameManager",,,,0,"File:GameManager.cs:GameManager.IncrementScore","CSharpClass:GameManager:IncrementScore"]]]]);

@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("sli",["Function","Variable"],[["Slide",,[["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.Slide","CSharpClass:PlayerController:Slide"]]],["slideDuration",,[["PlayerController",,,,1,"File:PlayerController.cs:PlayerController.slideDuration","CSharpClass:PlayerController:slideDuration"]]]]);

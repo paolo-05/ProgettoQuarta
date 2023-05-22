@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("sfx",["Variable"],[["SFX",,[["AudioManager",,,,0,"File:AudioManager.cs:AudioManager.SFX","CSharpClass:AudioManager:SFX"]]],["SFXSlider",,[["AudioManager",,,,0,"File:AudioManager.cs:AudioManager.SFXSlider","CSharpClass:AudioManager:SFXSlider"]]]]);

@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("til",["Variable"],[["tilesFreeFromObstacles",,[["GameManager",,,,0,"File:GameManager.cs:GameManager.tilesFreeFromObstacles","CSharpClass:GameManager:tilesFreeFromObstacles"]]]]);

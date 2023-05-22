@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("ins",["Variable"],[["instance",,[["GameManager",,,,0,"File:GameManager.cs:GameManager.instance","CSharpClass:GameManager:instance"]]]]);

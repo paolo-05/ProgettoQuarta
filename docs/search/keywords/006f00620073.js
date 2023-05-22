@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("obs",["Class","Variable"],[["Obstacle",,[[,,,,0,"File:Obstacle.cs:Obstacle","CSharpClass:Obstacle"]]],["obstaclePrefab",,[["GroundTile",,,,1,"File:GroundTile.cs:GroundTile.obstaclePrefab","CSharpClass:GroundTile:obstaclePrefab"]]]]);

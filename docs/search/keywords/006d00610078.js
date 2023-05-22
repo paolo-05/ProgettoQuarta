@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("max",["Variable"],[["maxSpeed",,[["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.maxSpeed","CSharpClass:PlayerController:maxSpeed"]]]]);

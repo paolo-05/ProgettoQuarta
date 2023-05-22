@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("yes",["Variable"],[["yesButton",,[["ModalDialog",,,,0,"File:ModalDialog.cs:ModalDialog.yesButton","CSharpClass:ModalDialog:yesButton"]]]]);

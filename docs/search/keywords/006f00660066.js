@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("off",["Variable"],[["offset",,[["CameraFollow",,,,0,"File:CameraFollow.cs:CameraFollow.offset","CSharpClass:CameraFollow:offset"]]]]);

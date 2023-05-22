@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("cou",["Function","Variable"],[["CountdownCoroutine",,[["GameUI",,,,0,"File:GameUI.cs:GameUI.CountdownCoroutine","CSharpClass:GameUI:CountdownCoroutine"]]],["countdownText",,[["GameUI",,,,1,"File:GameUI.cs:GameUI.countdownText","CSharpClass:GameUI:countdownText"]]]]);

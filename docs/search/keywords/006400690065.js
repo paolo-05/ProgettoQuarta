@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("die",["Function"],[["Die",,[["EnemyController",,,,0,"File:EnemyController.cs:EnemyController.Die","CSharpClass:EnemyController:Die"],["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.Die","CSharpClass:PlayerController:Die"]]]]);

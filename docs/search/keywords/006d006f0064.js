@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("mod",["Class","Variable"],[["ModalDialog",,[[,,,,0,"File:ModalDialog.cs:ModalDialog","CSharpClass:ModalDialog"]]],["modalPanelObject",,[["ModalDialog",,,,1,"File:ModalDialog.cs:ModalDialog.modalPanelObject","CSharpClass:ModalDialog:modalPanelObject"]]]]);

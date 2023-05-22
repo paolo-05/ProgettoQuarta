@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("iss",["Variable"],[["isSliding",,[["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.isSliding","CSharpClass:PlayerController:isSliding"]]]]);

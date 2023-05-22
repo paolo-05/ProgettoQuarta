@@ -1,36 +1,43 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Need this to manage scene changes
+using UnityEngine.SceneManagement;
 using System.Collections;
 
+/// <summary>
+/// Manages the user interface (UI) of the game.
+/// </summary>
 public class GameUI : MonoBehaviour
 {
+    [SerializeField] GameObject coinsGameObject; // Game object representing coins
+    [SerializeField] GameObject bestScoreGameObject; // Game object representing best score
+    [SerializeField] GameObject scoreGameObject; // Game object representing current score
+    [SerializeField] GameObject startGame; // Game object representing the start game button
+    [SerializeField] GameObject purchasePanel; // Game object representing the purchase panel
+    [SerializeField] GameObject settingsPanel; // Game object representing the settings panel
+    [SerializeField] GameObject pausePanel; // Game object representing the pause panel
+    [SerializeField] GameObject pauseButton; // Game object representing the pause button
+    [SerializeField] GameObject mainMenuButton; // Game object representing the main menu button
+    [SerializeField] GameObject helpPanel; // Game object representing the help panel
+    [SerializeField] GameObject helpButton; // Game object representing the help button
+    [SerializeField] ModalDialog alert; // Modal dialog object
+    [SerializeField] Text countdownText; // Text object for countdown
 
-    // Game objects in the scene
-    [SerializeField] GameObject coinsGameObject;
-    [SerializeField] GameObject bestScoreGameObject;
-    [SerializeField] GameObject scoreGameObject;
-    [SerializeField] GameObject startGame;
-    [SerializeField] GameObject purchasePanel;
-    [SerializeField] GameObject settingsPanel;
-    [SerializeField] GameObject pausePanel;
-    [SerializeField] GameObject pauseButton;
-    [SerializeField] GameObject mainMenuButton;
-    [SerializeField] GameObject helpPanel;
-    [SerializeField] GameObject helpButton;
-    [SerializeField] ModalDialog alert;
-
-    [SerializeField] Text countdownText;
-
+    /// <summary>
+    /// Activated when the object is initialized.
+    /// </summary>
     private void Start()
     {
-        pauseButton.SetActive(true);
+        pauseButton.SetActive(false);
         mainMenuButton.SetActive(true);
         helpButton.SetActive(true);
     }
+
+    /// <summary>
+    /// Called every frame.
+    /// </summary>
     private void Update()
     {
-        if (GameManager.instance.gameStarted) 
+        if (GameManager.instance.gameStarted)
         {
             mainMenuButton.SetActive(false);
             helpButton.SetActive(false);
@@ -39,7 +46,9 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    // Function to start the game again
+    /// <summary>
+    /// Starts the game again.
+    /// </summary>
     public void PlayAgain()
     {
         Click();
@@ -48,13 +57,18 @@ public class GameUI : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // Function to go back to the main menu
+    /// <summary>
+    /// Goes back to the main menu.
+    /// </summary>
     public void MainMenu()
     {
         Click();
         alert.ShowDialog();
     }
 
+    /// <summary>
+    /// Opens the settings panel.
+    /// </summary>
     public void OpenSettings()
     {
         Click();
@@ -69,11 +83,14 @@ public class GameUI : MonoBehaviour
         settingsPanel.SetActive(true);
     }
 
+    /// <summary>
+    /// Closes the settings panel.
+    /// </summary>
     public void CloseSettings()
     {
         Click();
         coinsGameObject.SetActive(true);
-        if (!GameManager.instance.gameStarted) 
+        if (!GameManager.instance.gameStarted)
         {
             startGame.SetActive(true);
             purchasePanel.SetActive(true);
@@ -86,6 +103,9 @@ public class GameUI : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
+    /// <summary>
+    /// Opens the help panel.
+    /// </summary>
     public void OpenHelp()
     {
         Click();
@@ -99,6 +119,9 @@ public class GameUI : MonoBehaviour
         helpButton.SetActive(false);
     }
 
+    /// <summary>
+    /// Closes the help panel.
+    /// </summary>
     public void CloseHelp()
     {
         Click();
@@ -110,6 +133,9 @@ public class GameUI : MonoBehaviour
         helpButton.SetActive(true);
     }
 
+    /// <summary>
+    /// Pauses the game.
+    /// </summary>
     public void PauseGame()
     {
         Click();
@@ -119,6 +145,9 @@ public class GameUI : MonoBehaviour
         pausePanel.SetActive(true);
     }
 
+    /// <summary>
+    /// Resumes the game after a countdown.
+    /// </summary>
     public void ResumeGame()
     {
         Click();
@@ -126,6 +155,9 @@ public class GameUI : MonoBehaviour
         StartCoroutine(CountdownCoroutine());
     }
 
+    /// <summary>
+    /// Coroutine for the countdown before resuming the game.
+    /// </summary>
     IEnumerator CountdownCoroutine()
     {
         countdownText.gameObject.SetActive(true);
@@ -146,6 +178,9 @@ public class GameUI : MonoBehaviour
         pauseButton.SetActive(true);
     }
 
+    /// <summary>
+    /// Plays a button click sound and handles related actions.
+    /// </summary>
     private void Click()
     {
         // Play the sound

@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("lan",["Variable"],[["laneDistance",,[["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.laneDistance","CSharpClass:PlayerController:laneDistance"]]]]);

@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("tak",["Function"],[["TakeDamage",,[["EnemyController",,,,0,"File:EnemyController.cs:EnemyController.TakeDamage","CSharpClass:EnemyController:TakeDamage"]]]]);

@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("isu",["Variable"],[["isUIElement",,[["EnemyController",,,,0,"File:EnemyController.cs:EnemyController.isUIElement","CSharpClass:EnemyController:isUIElement"],["GunController",,,,0,"File:GunController.cs:GunController.isUIElement","CSharpClass:GunController:isUIElement"]]]]);

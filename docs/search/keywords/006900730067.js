@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("isg",["Variable"],[["isGrounded",,[["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.isGrounded","CSharpClass:PlayerController:isGrounded"]]]]);

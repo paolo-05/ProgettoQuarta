@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("nex",["Variable"],[["nextFire",,[["GunController",,,,0,"File:GunController.cs:GunController.nextFire","CSharpClass:GunController:nextFire"]]],["nextSpawnPoint",,[["GroundSpawner",,,,0,"File:GroundSpawner.cs:GroundSpawner.nextSpawnPoint","CSharpClass:GroundSpawner:nextSpawnPoint"]]]]);

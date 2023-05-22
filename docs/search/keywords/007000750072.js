@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("pur",["Class","Variable"],[["Purchase",,[[,,,,0,"File:Purchase.cs:Purchase","CSharpClass:Purchase"]]],["purchasePanel",,[["GameManager",,,,1,"File:GameManager.cs:GameManager.purchasePanel","CSharpClass:GameManager:purchasePanel"],["GameUI",,,,1,"File:GameUI.cs:GameUI.purchasePanel","CSharpClass:GameUI:purchasePanel"]]]]);

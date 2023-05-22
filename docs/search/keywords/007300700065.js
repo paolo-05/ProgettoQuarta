@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("spe",["Variable"],[["speed",,[["BulletController",,,,0,"File:BulletController.cs:BulletController.speed","CSharpClass:BulletController:speed"]]],["speedIncreasePerPoint",,[["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.speedIncreasePerPoint","CSharpClass:PlayerController:speedIncreasePerPoint"]]]]);

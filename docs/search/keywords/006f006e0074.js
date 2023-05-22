@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("ont",["Function"],[["OnTriggerEnter",,[["CoinPickup",,,,0,"File:CoinPickup.cs:CoinPickup.OnTriggerEnter","CSharpClass:CoinPickup:OnTriggerEnter"]]],["OnTriggerExit",,[["GroundTile",,,,0,"File:GroundTile.cs:GroundTile.OnTriggerExit","CSharpClass:GroundTile:OnTriggerExit"]]]]);

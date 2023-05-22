@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("vol",["Variable"],[["volume",,[["AudioManager",,,,0,"File:AudioManager.cs:AudioManager.volume","CSharpClass:AudioManager:volume"],["Sound",,,,0,"File:Sound.cs:Sound.volume","CSharpClass:Sound:volume"]]]]);

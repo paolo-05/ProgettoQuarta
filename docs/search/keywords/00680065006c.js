@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("hel",["Variable"],[["helpButton",,[["GameUI",,,,0,"File:GameUI.cs:GameUI.helpButton","CSharpClass:GameUI:helpButton"]]],["helpPanel",,[["GameUI",,,,0,"File:GameUI.cs:GameUI.helpPanel","CSharpClass:GameUI:helpPanel"]]]]);

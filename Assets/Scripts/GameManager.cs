@@ -1,13 +1,15 @@
-// import of necessary packages
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the game state, score, and coins.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // singleton instance
+    public static GameManager instance; // Singleton instance
 
     // Number of tiles free from obstacles at the beginning of the game
     public int tilesFreeFromObstacles = 3;
@@ -129,6 +131,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Increments the score by the specified amount and updates the score text.
+    /// </summary>
+    /// <param name="amount">The amount to increment the score.</param>
     public void IncrementScore(int amount)
     {
         // Increase the score and update the score text
@@ -144,6 +150,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Increments the coins by the specified amount, updates the coins text, and increases the player's speed.
+    /// </summary>
+    /// <param name="amount">The amount to increment the coins.</param>
     public void IncrementCoins(int amount)
     {
         // Increase the coins and update the coins text
@@ -152,7 +162,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Coins", coins);
         coinText.text = coins.ToString();
 
-        // increase the player speed
+        // Increase the player's speed
         playerController.forwardSpeed += playerController.speedIncreasePerPoint;
-    }  
+    }
 }

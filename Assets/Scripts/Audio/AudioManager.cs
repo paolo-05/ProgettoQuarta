@@ -3,30 +3,24 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages audio playback and volume control.
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField]
-    private Sound[] sounds;
-    [SerializeField]
-    private Sound[] musics;
+    [SerializeField] private Sound[] sounds; // Array of sound effects
+    [SerializeField] private Sound[] musics; // Array of music tracks
 
-    [SerializeField]
-    private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer; // Reference to the audio mixer
 
-    [SerializeField]
-    private AudioMixerGroup music;
-    [SerializeField]
-    private AudioMixerGroup SFX;
+    [SerializeField] private AudioMixerGroup music; // Audio mixer group for music
+    [SerializeField] private AudioMixerGroup SFX; // Audio mixer group for sound effects
 
-    private float volume;
+    private float volume; // Current volume level
 
-
-    [SerializeField]
-    private Slider masterSlider;
-    [SerializeField]
-    private Slider musicSlider;
-    [SerializeField]
-    private Slider SFXSlider;
+    [SerializeField] private Slider masterSlider; // Slider for master volume
+    [SerializeField] private Slider musicSlider; // Slider for music volume
+    [SerializeField] private Slider SFXSlider; // Slider for sound effects volume
 
     private void Awake()
     {
@@ -84,6 +78,10 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("Master", volume);
     }
 
+    /// <summary>
+    /// Plays a sound effect by name.
+    /// </summary>
+    /// <param name="name">The name of the sound effect.</param>
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -91,6 +89,9 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    /// <summary>
+    /// Plays a random music track.
+    /// </summary>
     public void PlayMusic()
     {
         int index = UnityEngine.Random.Range(0, musics.Length);
@@ -98,18 +99,30 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    /// <summary>
+    /// Sets the master volume level.
+    /// </summary>
+    /// <param name="volume">The volume level (range: -80 to 0).</param>
     public void SetMasterVolume(float volume)
     {
         audioMixer.SetFloat("Master", volume);
         PlayerPrefs.SetFloat("MasterVolume", volume);
     }
 
+    /// <summary>
+    /// Sets the music volume level.
+    /// </summary>
+    /// <param name="volume">The volume level (range: -80 to 0).</param>
     public void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat("Music", volume);
         PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
+    /// <summary>
+    /// Sets the sound effects volume level.
+    /// </summary>
+    /// <param name="volume">The volume level (range: -80 to 0).</param>
     public void SetSFXVolume(float volume)
     {
         audioMixer.SetFloat("SFX", volume);

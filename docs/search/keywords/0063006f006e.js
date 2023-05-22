@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("con",["Variable"],[["controller",,[["BulletController",,,,0,"File:BulletController.cs:BulletController.controller","CSharpClass:BulletController:controller"],["PlayerController",,,,0,"File:PlayerController.cs:PlayerController.controller","CSharpClass:PlayerController:controller"]]]]);

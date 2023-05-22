@@ -1,23 +1,25 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the main menu user interface (UI).
+/// </summary>
 public class MainMenuUI : MonoBehaviour
 {
-    // Reference to the enemy and gun game objects
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject gun;
+    [SerializeField] GameObject enemy; // Reference to the enemy game object
+    [SerializeField] GameObject gun; // Reference to the gun game object
 
-    // Panels for responsive UI
-    [SerializeField] GameObject startPanel;
-    [SerializeField] GameObject optionsPanel;
-    [SerializeField] GameObject loadingPanel;
-    [SerializeField] Slider loadingSlider;
-    [SerializeField] Text progressText;
+    [SerializeField] GameObject startPanel; // Panel for the start menu
+    [SerializeField] GameObject optionsPanel; // Panel for the options menu
+    [SerializeField] GameObject loadingPanel; // Panel for the loading screen
+    [SerializeField] Slider loadingSlider; // Slider for the loading progress
+    [SerializeField] Text progressText; // Text for the loading progress
 
-    // Start the game by loading the game scene
+    /// <summary>
+    /// Starts the game by loading the game scene.
+    /// </summary>
     public void Play()
     {
         Click();
@@ -25,26 +27,33 @@ public class MainMenuUI : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // Open the settings menu
+    /// <summary>
+    /// Opens the settings menu.
+    /// </summary>
     public void OpenSettings()
     {
         Click();
 
-        // activate the settings panel and hide the main panel
+        // Activate the settings panel and hide the main panel
         startPanel.SetActive(false);
         optionsPanel.SetActive(true);
     }
 
+    /// <summary>
+    /// Closes the settings menu.
+    /// </summary>
     public void CloseSettings()
     {
         Click();
 
-        // activate the main panel and deactivate the settings panel
+        // Activate the main panel and deactivate the settings panel
         startPanel.SetActive(true);
         optionsPanel.SetActive(false);
     }
 
-    // Quit the game
+    /// <summary>
+    /// Quits the game.
+    /// </summary>
     public void Exit()
     {
         Click();
@@ -67,7 +76,6 @@ public class MainMenuUI : MonoBehaviour
         optionsPanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         // If any key is pressed, shoot the gun
@@ -77,6 +85,10 @@ public class MainMenuUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads a level asynchronously.
+    /// </summary>
+    /// <param name="sceneIndex">The index of the scene to load.</param>
     public void LoadLevel(int sceneIndex)
     {
         Click();

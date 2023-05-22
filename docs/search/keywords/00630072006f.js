@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("cro",["Variable"],[["crouchObstaclePrefab",,[["GroundTile",,,,0,"File:GroundTile.cs:GroundTile.crouchObstaclePrefab","CSharpClass:GroundTile:crouchObstaclePrefab"]]]]);

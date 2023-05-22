@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("isp",["Variable"],[["isPaused",,[["GameManager",,,,0,"File:GameManager.cs:GameManager.isPaused","CSharpClass:GameManager:isPaused"]]]]);

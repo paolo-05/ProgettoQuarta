@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("rot",["Variable"],[["rotationSpeed",,[["CoinPickup",,,,0,"File:CoinPickup.cs:CoinPickup.rotationSpeed","CSharpClass:CoinPickup:rotationSpeed"]]]]);

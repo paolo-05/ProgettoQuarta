@@ -1,29 +1,38 @@
 using UnityEngine;
 
+/// <summary>
+/// Follows the player's position with a camera.
+/// </summary>
 public class CameraFollow : MonoBehaviour
 {
-    // Reference to the player's transform
+    /// <summary>
+    /// Reference to the player's transform.
+    /// </summary>
     [SerializeField] Transform player;
 
-    // Vector representing the distance between the camera and the player
-    private Vector3 offset;
+    private Vector3 offset; // Vector representing the distance between the camera and the player
 
-    void Start()
+    /// <summary>
+    /// Calculates the initial offset between the camera and the player.
+    /// </summary>
+    private void Start()
     {
-        // Calculate the initial offset between the camera and the player
         offset = transform.position - player.position;
     }
 
-    void Update()
+    /// <summary>
+    /// Updates the camera's position based on the player's position.
+    /// </summary>
+    private void Update()
     {
         if (GameManager.instance.gameOver) { return; }
-        // If the game hasn't started yet, move the camera to a fixed position
+
         if (!GameManager.instance.gameStarted)
         {
+            // If the game hasn't started yet, move the camera to a fixed position
             transform.position = new Vector3(0, 5, 0);
         }
 
-        // Calculate the new position of the camera based on the player's position and the offset
         Vector3 targetPos = player.position + offset;
 
         // Lock the camera's position on the x-axis

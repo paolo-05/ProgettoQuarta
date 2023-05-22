@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("tri",["Variable"],[["trigger",,[["GunController",,,,0,"File:GunController.cs:GunController.trigger","CSharpClass:GunController:trigger"]]]]);
