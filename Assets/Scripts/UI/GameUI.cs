@@ -43,6 +43,11 @@ public class GameUI : MonoBehaviour
             helpButton.SetActive(false);
             helpPanel.SetActive(false);
             settingsPanel.SetActive(false);
+            pauseButton.SetActive(true);
+        }
+        if (GameManager.instance.isPaused || GameManager.instance.gameOver)
+        {
+            pauseButton.SetActive(false);
         }
     }
 

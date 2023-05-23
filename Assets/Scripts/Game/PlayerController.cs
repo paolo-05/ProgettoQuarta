@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
     {
         isSliding = true;
         animator.SetBool("isSliding", true);
-        yield return new WaitForSeconds(0.25f / Time.timeScale);
+        yield return new WaitForSeconds(0.15f / Time.timeScale);
 
         controller.center = new Vector3(0, -0.5f, 0);
         controller.height = 1;
@@ -196,8 +196,7 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        GameManager.instance.gameOver = true;
-        Destroy(gameObject);
+        Die();
     }
 
     /// <summary>
@@ -205,6 +204,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void Die()
     {
+        animator.SetBool("isGameStarted", false);
         GameManager.instance.gameOver = true;
     }
 }
