@@ -41,15 +41,22 @@ public class GunController : MonoBehaviour
     /// </summary>
     public Transform bulletSpawnPoint;
 
-    [SerializeField]
-    private GameObject trigger;
+    /// <summary>
+    /// The effect played when the gun shoots.
+    /// </summary>
+    public GameObject shootingEffectPrefab;
+
+    /// <summary>
+    /// The trigger of the gun
+    /// </summary>
+    [SerializeField] GameObject trigger;
 
     private float nextFire = 0;
 
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
-    void Update()
+    private void Update()
     {
         if (isUIElement) return;
 
@@ -71,6 +78,10 @@ public class GunController : MonoBehaviour
             nextFire = Time.time + fireRate;
             trigger.transform.rotation = Quaternion.Euler(0f, 0f, 50f);
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
+
+            // Instantiate the shooting effect prefab
+            GameObject shootingEffect = Instantiate(shootingEffectPrefab, bulletSpawnPoint.position, transform.rotation);
+            Destroy(shootingEffect, 1f); // Destroy the shooting effect after 1 second
 
             if (isUIElement) { bullet.transform.localScale = new Vector3(150f, 150f, 150f); }
 

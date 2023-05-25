@@ -171,6 +171,7 @@ MonoBehaviour:
   bulletSpeed: 100
   bulletPrefab: {fileID: 3575611928538805115, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
   bulletSpawnPoint: {fileID: 6548778049416066185}
+  shootingEffectPrefab: {fileID: 748781637555137343, guid: b9e4e185fe3d3674ab50aa2a10a663cc, type: 3}
   trigger: {fileID: 137678530859997941}
 --- !u!1 &5642539791650178406
 GameObject:

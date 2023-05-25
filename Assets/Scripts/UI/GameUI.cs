@@ -8,19 +8,70 @@ using System.Collections;
 /// </summary>
 public class GameUI : MonoBehaviour
 {
-    [SerializeField] GameObject coinsGameObject; // Game object representing coins
-    [SerializeField] GameObject bestScoreGameObject; // Game object representing best score
-    [SerializeField] GameObject scoreGameObject; // Game object representing current score
-    [SerializeField] GameObject startGame; // Game object representing the start game button
-    [SerializeField] GameObject purchasePanel; // Game object representing the purchase panel
-    [SerializeField] GameObject settingsPanel; // Game object representing the settings panel
-    [SerializeField] GameObject pausePanel; // Game object representing the pause panel
-    [SerializeField] GameObject pauseButton; // Game object representing the pause button
-    [SerializeField] GameObject mainMenuButton; // Game object representing the main menu button
-    [SerializeField] GameObject helpPanel; // Game object representing the help panel
-    [SerializeField] GameObject helpButton; // Game object representing the help button
-    [SerializeField] ModalDialog alert; // Modal dialog object
-    [SerializeField] Text countdownText; // Text object for countdown
+    /// <summary>
+    /// Game object representing the coins value.
+    /// </summary>
+    [SerializeField] GameObject coinsGameObject;
+
+    /// <summary>
+    /// Game object representing best score.
+    /// </summary>
+    [SerializeField] GameObject bestScoreGameObject;
+
+    /// <summary>
+    /// Game object representing current score.
+    /// </summary>
+    [SerializeField] GameObject scoreGameObject;
+
+    /// <summary>
+    /// Game object representing the start game button.
+    /// </summary>
+    [SerializeField] GameObject startGame;
+
+    /// <summary>
+    /// Game object representing the purchase panel
+    /// </summary>
+    [SerializeField] GameObject purchasePanel;
+
+    /// <summary>
+    /// Game object representing the settings panel.
+    /// </summary>
+    [SerializeField] GameObject settingsPanel;
+
+    /// <summary>
+    /// Game object representing the pause panel.
+    /// </summary>
+    [SerializeField] GameObject pausePanel;
+
+    /// <summary>
+    /// Game object representing the pause button.
+    /// </summary>
+    [SerializeField] GameObject pauseButton;
+
+    /// <summary>
+    /// Game object representing the main menu button. 
+    /// </summary>
+    [SerializeField] GameObject mainMenuButton;
+
+    /// <summary>
+    /// Game object representing the help panel.
+    /// </summary>
+    [SerializeField] GameObject helpPanel;
+
+    /// <summary>
+    /// Game object representing the help button.
+    /// </summary>
+    [SerializeField] GameObject helpButton;
+
+    /// <summary>
+    /// Modal dialog object
+    /// </summary>
+    [SerializeField] ModalDialog alert;
+
+    /// <summary>
+    /// Text object for countdown
+    /// </summary>
+    [SerializeField] Text countdownText; 
 
     /// <summary>
     /// Activated when the object is initialized.

@@ -24,10 +24,16 @@
  <div class="CBody"><p>Determines if the enemy is a UI element.</p></div>
 </div>
 
-<a name="health"></a><a name="Topic231"></a><div class="CTopic TVariable LCSharp">
- <div class="CTitle">health</div>
- <div id="NDPrototype231" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">float</span> health</div></div>
- <div class="CBody"><p>The health of the enemy.</p></div>
+<a name="maxHealth"></a><a name="Topic143"></a><div class="CTopic TVariable LCSharp">
+ <div class="CTitle">maxHealth</div>
+ <div id="NDPrototype143" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">int</span> maxHealth</div></div>
+ <div class="CBody"><p>The max health of the enemy.</p></div>
+</div>
+
+<a name="currentHealth"></a><a name="Topic144"></a><div class="CTopic TVariable LCSharp">
+ <div class="CTitle">currentHealth</div>
+ <div id="NDPrototype144" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">int</span> currentHealth</div></div>
+ <div class="CBody"><p>The current health of the enemy</p></div>
 </div>
 
 <a name="animator"></a><a name="Topic232"></a><div class="CTopic TVariable LCSharp">
@@ -36,14 +42,32 @@
  <div class="CBody"><p>The animator component for controlling animations.</p></div>
 </div>
 
+<a name="healthBar"></a><a name="Topic145"></a><div class="CTopic TVariable LCSharp">
+ <div class="CTitle">healthBar</div>
+ <div id="NDPrototype145" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <a href="../../index.html#CSharpClass:HealthBar" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,276);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >HealthBar</a> healthBar</div></div>
+ <div class="CBody"><p>The reference to the health bar.</p></div>
+</div>
+
+<a name="healtBarGameObject"></a><a name="Topic146"></a><div class="CTopic TVariable LCSharp">
+ <div class="CTitle">healtBarGameObject</div>
+ <div id="NDPrototype146" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> GameObject healtBarGameObject</div></div>
+ <div class="CBody"><p>Reference to the health bar game object.</p></div>
+</div>
+
 <a name="Functions"></a><a name="Topic233"></a><div class="CTopic TGroup LCSharp">
  <div class="CTitle">Functions</div>
 </div>
 
-<a name="TakeDamage"></a><a name="Topic234"></a><div class="CTopic TFunction LCSharp">
+<a name="Start"></a><a name="Topic148"></a><div class="CTopic TFunction LCSharp">
+ <div class="CTitle">Start</div>
+ <div id="NDPrototype148" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">private</span> <span class="SHKeyword">void</span> Start()</div></div>
+ <div class="CBody"><p>In this method, called only once the enemy is istantiated, the health is set.</p></div>
+</div>
+
+<a name="TakeDamage"></a><a name="Topic149"></a><div class="CTopic TFunction LCSharp">
  <div class="CTitle">TakeDamage</div>
- <div id="NDPrototype234" class="NDPrototype WideForm"><div class="PSection PParameterSection CStyle"><table><tr><td class="PBeforeParameters"><span class="SHKeyword">public</span> <span class="SHKeyword">void</span> TakeDamage(</td><td class="PParametersParentCell"><table class="PParameters"><tr><td class="PType first"><span class="SHKeyword">float</span>&nbsp;</td><td class="PName last">damage</td></tr></table></td><td class="PAfterParameters">)</td></tr></table></div></div>
- <div class="CBody"><p>Called when the enemy takes damage.</p><div class="CHeading">Parameter</div><table class="CDefinitionList"><tr><td class="CDLEntry">damage<div class="CDLParameterType"><span class="SHKeyword">float</span></div></td><td class="CDLDefinition"><p>The amount of damage to inflict on the enemy.</p></td></tr></table></div>
+ <div id="NDPrototype149" class="NDPrototype WideForm"><div class="PSection PParameterSection CStyle"><table><tr><td class="PBeforeParameters"><span class="SHKeyword">public</span> <span class="SHKeyword">void</span> TakeDamage(</td><td class="PParametersParentCell"><table class="PParameters"><tr><td class="PType first"><span class="SHKeyword">int</span>&nbsp;</td><td class="PName last">damage</td></tr></table></td><td class="PAfterParameters">)</td></tr></table></div></div>
+ <div class="CBody"><p>Called when the enemy takes damage.</p><div class="CHeading">Parameter</div><table class="CDefinitionList"><tr><td class="CDLEntry">damage<div class="CDLParameterType"><span class="SHKeyword">int</span></div></td><td class="CDLDefinition"><p>The amount of damage to inflict on the enemy.</p></td></tr></table></div>
 </div>
 
 <a name="Die"></a><a name="Topic235"></a><div class="CTopic TFunction LCSharp">

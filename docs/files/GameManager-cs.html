@@ -14,18 +14,20 @@
  <div class="CBody"><p>Manages the game state, score, and coins.</p></div>
 </div>
 
-<a name="GameManager.Variables"></a><a name="Topic197"></a><div class="CTopic TGroup LCSharp">
- <div class="CTitle">Variables</div>
-</div>
-
-<a name="GameManager.instance"></a><a name="Topic198"></a><div class="CTopic TVariable LCSharp">
+<a name="GameManager.instance"></a><a name="Topic167"></a><div class="CTopic TVariable LCSharp">
  <div class="CTitle">instance</div>
- <div id="NDPrototype198" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public static</span> <a href="../index.html#File:GameManager.cs:GameManager" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,196);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >GameManager</a> instance</div></div>
+ <div id="NDPrototype167" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public static</span> <a href="../index.html#File:GameManager.cs:GameManager" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,196);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >GameManager</a> instance</div></div>
+ <div class="CBody"><p>Singleton instance.</p></div>
 </div>
 
-<a name="GameManager.tilesFreeFromObstacles"></a><a name="Topic199"></a><div class="CTopic TVariable LCSharp">
+<a name="GameManager.tilesFreeFromObstacles"></a><a name="Topic168"></a><div class="CTopic TVariable LCSharp">
  <div class="CTitle">tilesFreeFromObstacles</div>
- <div id="NDPrototype199" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">int</span> tilesFreeFromObstacles</div></div>
+ <div id="NDPrototype168" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">int</span> tilesFreeFromObstacles</div></div>
+ <div class="CBody"><p>Number of tiles free from obstacles at the beginning of the game.</p></div>
+</div>
+
+<a name="GameManager.Variables_to_keep_track_of_game_state."></a><a name="Topic169"></a><div class="CTopic TGroup LCSharp">
+ <div class="CTitle">Variables to keep track of game state.</div>
 </div>
 
 <a name="GameManager.thisGameCoins"></a><a name="Topic200"></a><div class="CTopic TVariable LCSharp">
@@ -48,6 +50,10 @@
  <div id="NDPrototype203" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">bool</span> isPaused</div></div>
 </div>
 
+<a name="GameManager.Variables_to_keep_track_of_score_and_coins."></a><a name="Topic170"></a><div class="CTopic TGroup LCSharp">
+ <div class="CTitle">Variables to keep track of score and coins.</div>
+</div>
+
 <a name="GameManager.coins"></a><a name="Topic204"></a><div class="CTopic TVariable LCSharp">
  <div class="CTitle">coins</div>
  <div id="NDPrototype204" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">private</span> <span class="SHKeyword">int</span> coins</div></div>
@@ -66,6 +72,10 @@
 <a name="GameManager.score"></a><a name="Topic207"></a><div class="CTopic TVariable LCSharp">
  <div class="CTitle">score</div>
  <div id="NDPrototype207" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">public</span> <span class="SHKeyword">int</span> score</div></div>
+</div>
+
+<a name="GameManager.Game_objects_in_the_scene."></a><a name="Topic171"></a><div class="CTopic TGroup LCSharp">
+ <div class="CTitle">Game objects in the scene.</div>
 </div>
 
 <a name="GameManager.scoreGameObject"></a><a name="Topic208"></a><div class="CTopic TVariable LCSharp">
@@ -103,6 +113,10 @@
  <div id="NDPrototype214" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHMetadata">[SerializeField]</span></div><div class="PSection PPlainSection">GameObject personalBestGameObject</div></div>
 </div>
 
+<a name="GameManager.Text_objects_in_the_scene."></a><a name="Topic172"></a><div class="CTopic TGroup LCSharp">
+ <div class="CTitle">Text objects in the scene.</div>
+</div>
+
 <a name="GameManager.scoreText"></a><a name="Topic215"></a><div class="CTopic TVariable LCSharp">
  <div class="CTitle">scoreText</div>
  <div id="NDPrototype215" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHMetadata">[SerializeField]</span></div><div class="PSection PPlainSection">Text scoreText</div></div>
@@ -128,9 +142,10 @@
  <div id="NDPrototype219" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHMetadata">[SerializeField]</span></div><div class="PSection PPlainSection">Text thisGameScoreText</div></div>
 </div>
 
-<a name="GameManager.playerController"></a><a name="Topic220"></a><div class="CTopic TVariable LCSharp">
+<a name="GameManager.playerController"></a><a name="Topic251"></a><div class="CTopic TVariable LCSharp">
  <div class="CTitle">playerController</div>
- <div id="NDPrototype220" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHMetadata">[SerializeField]</span></div><div class="PSection PPlainSection"><a href="../index.html#File:PlayerController.cs:PlayerController" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,78);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >PlayerController</a> playerController</div></div>
+ <div id="NDPrototype251" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHMetadata">[SerializeField]</span></div><div class="PSection PPlainSection"><a href="../index.html#File:PlayerController.cs:PlayerController" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,78);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >PlayerController</a> playerController</div></div>
+ <div class="CBody"><p>Reference to the PlayerController component.</p></div>
 </div>
 
 <a name="GameManager.gameUI"></a><a name="Topic221"></a><div class="CTopic TVariable LCSharp">
@@ -138,13 +153,10 @@
  <div id="NDPrototype221" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">private</span> <a href="../index.html#File:GameUI.cs:GameUI" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,161);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >GameUI</a> gameUI</div></div>
 </div>
 
-<a name="GameManager.Functions"></a><a name="Topic222"></a><div class="CTopic TGroup LCSharp">
- <div class="CTitle">Functions</div>
-</div>
-
-<a name="GameManager.Awake"></a><a name="Topic223"></a><div class="CTopic TFunction LCSharp">
+<a name="GameManager.Awake"></a><a name="Topic174"></a><div class="CTopic TFunction LCSharp">
  <div class="CTitle">Awake</div>
- <div id="NDPrototype223" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">private</span> <span class="SHKeyword">void</span> Awake()</div></div>
+ <div id="NDPrototype174" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">private</span> <span class="SHKeyword">void</span> Awake()</div></div>
+ <div class="CBody"><p>Set up singleton instance</p></div>
 </div>
 
 <a name="GameManager.Start"></a><a name="Topic224"></a><div class="CTopic TFunction LCSharp">

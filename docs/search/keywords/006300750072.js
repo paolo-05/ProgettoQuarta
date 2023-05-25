@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("cur",["Variable"],[["currentHealth",,[["EnemyController",,,,0,"File:EnemyController.cs:EnemyController.currentHealth","CSharpClass:EnemyController:currentHealth"]]]]);

@@ -5,13 +5,17 @@ using UnityEngine;
 /// </summary>
 public class Obstacle : MonoBehaviour
 {
-    private PlayerController playerController;    // Reference to the PlayerController script
-    public bool isCrouchObstacle = false; // Flag to indicate if this is a crouch obstacle or not
+    /// <summary>
+    /// Reference to the PlayerController script
+    /// </summary>
+    private PlayerController playerController;
 
-    private void Start()
-    {
-        playerController = GameObject.FindObjectOfType<PlayerController>();
-    }
+    /// <summary>
+    /// Flag to indicate if this is a crouch obstacle or not
+    /// </summary>
+    public bool isCrouchObstacle = false;
+
+    private void Start() => playerController = FindObjectOfType<PlayerController>();
 
     /// <summary>
     /// Called when the controller hits a collider while performing a Move operation.

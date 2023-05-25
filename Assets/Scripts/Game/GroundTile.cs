@@ -5,15 +5,44 @@ using UnityEngine;
 /// </summary>
 public class GroundTile : MonoBehaviour
 {
+    /// <summary>
+    /// Reference to the coin prefab.
+    /// </summary>
     [SerializeField] GameObject coinPrefab;
+
+    /// <summary>
+    /// Reference to the obstacle (wood stump).
+    /// </summary>
     [SerializeField] GameObject obstaclePrefab;
+
+    /// <summary>
+    /// Reference to the crouch obstacle.
+    /// </summary>
     [SerializeField] GameObject crouchObstaclePrefab;
+
+    /// <summary>
+    /// Reference to the rock prefab.
+    /// </summary>
     [SerializeField] GameObject rockPrefab;
+
+    /// <summary>
+    /// Reference to the enemy prefab.
+    /// </summary>
     [SerializeField] GameObject enemyPrefab;
 
+    /// <summary>
+    /// Since the game is divided in three lanes, here are stored their positions.
+    /// </summary>
     private readonly float[] spawnPositions = { -3f, 0, 3f };
+
+    /// <summary>
+    /// Reference to the ground spawner.
+    /// </summary>
     private GroundSpawner groundSpawner;
 
+    /// <summary>
+    /// Here we call the functions to spawn the obstalces, the enemies, the rocks and the coins.
+    /// </summary>
     private void Start()
     {
         groundSpawner = FindObjectOfType<GroundSpawner>();
@@ -41,6 +70,10 @@ public class GroundTile : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Here it's checked when the player exits the tile.
+    /// </summary>
+    /// <param name="other">The game object that has collided this game object.</param>
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -136,7 +169,6 @@ public class GroundTile : MonoBehaviour
 
         Vector3 enemySpawnPosition = new(spawnPositions[spawnIndex], 0f, 5f);
         GameObject enemy = Instantiate(enemyPrefab, transform.position + enemySpawnPosition, Quaternion.Euler(0, 180, 0), transform);
-        enemy.GetComponent<EnemyController>().health += GameManager.instance.score * 0.1f;
 
         Vector3 spawnPoint;
         int min = 2, max = 7;

@@ -61,18 +61,37 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public float speedIncreasePerPoint = 0.1f;
 
+    /// <summary>
+    /// Reference to the *CharacterController* component.
+    /// </summary>
     private CharacterController controller;
+
+    /// <summary>
+    /// The final value by which the player will have to move.
+    /// </summary>
     private Vector3 move;
+
+    /// <summary>
+    /// Since the game plane is divided in three lines, at start, the player will be at the number one.
+    /// </summary>
     private int desiredLane = 1;
+
+    /// <summary>
+    /// The vertical velocity.
+    /// </summary>
     private Vector3 velocity;
+
+    /// <summary>
+    /// Boolean for checking if the player is sliding.
+    /// </summary>
     private bool isSliding = false;
 
-    void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
+    private void Start() => controller = GetComponent<CharacterController>();
 
-    void Update()
+    /// <summary>
+    /// Here the player it's constantly moved forward each frame.
+    /// </summary>
+    private void Update()
     {
         if (!GameManager.instance.gameStarted || GameManager.instance.gameOver)
         {
@@ -160,6 +179,10 @@ public class PlayerController : MonoBehaviour
         velocity.y = Mathf.Sqrt(jumpHeight * 2 * -gravity);
     }
 
+    /// <summary>
+    /// Here it's checked when the player collides with obstacles or enemies.
+    /// </summary>
+    /// <param name="hit">The game object that has collided with this game object.</param>
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.transform.CompareTag("Obstacle"))
@@ -173,6 +196,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine for the player's slide.
+    /// </summary>
+    /// <returns>Starts various count downs for the animations.</returns>
     private IEnumerator Slide()
     {
         isSliding = true;
@@ -189,6 +216,11 @@ public class PlayerController : MonoBehaviour
         isSliding = false;
     }
 
+    /// <summary>
+    /// Coroutine for when the player collides with enemies.
+    /// </summary>
+    /// <param name="hit"></param>
+    /// <returns>Starts various count downs for the animations.</returns>
     private IEnumerator EnemyCollision(ControllerColliderHit hit)
     {
         FindObjectOfType<AudioManager>().Play("PlayerDeath");

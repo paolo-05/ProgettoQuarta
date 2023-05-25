@@ -8,20 +8,53 @@ using UnityEngine.UI;
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private Sound[] sounds; // Array of sound effects
-    [SerializeField] private Sound[] musics; // Array of music tracks
+    /// <summary>
+    /// Array of sounds effects.
+    /// </summary>
+    [SerializeField] private Sound[] sounds;
+    /// <summary>
+    /// Array of music tracks.
+    /// </summary>
+    [SerializeField] private Sound[] musics;
 
-    [SerializeField] private AudioMixer audioMixer; // Reference to the audio mixer
+    /// <summary>
+    /// Reference to the audio mixer.
+    /// </summary>
+    [SerializeField] private AudioMixer audioMixer;
 
-    [SerializeField] private AudioMixerGroup music; // Audio mixer group for music
-    [SerializeField] private AudioMixerGroup SFX; // Audio mixer group for sound effects
+    /// <summary>
+    /// Audio mixer group for music.
+    /// </summary>
+    [SerializeField] private AudioMixerGroup music;
 
-    private float volume; // Current volume level
+    /// <summary>
+    /// Audio mixer group for sound effects.
+    /// </summary>
+    [SerializeField] private AudioMixerGroup SFX;
 
-    [SerializeField] private Slider masterSlider; // Slider for master volume
-    [SerializeField] private Slider musicSlider; // Slider for music volume
-    [SerializeField] private Slider SFXSlider; // Slider for sound effects volume
+    /// <summary>
+    /// Current volume level.
+    /// </summary>
+    private float volume;
 
+    /// <summary>
+    /// Slider for master volume.
+    /// </summary>
+    [SerializeField] private Slider masterSlider;
+
+    /// <summary>
+    /// Slider for music volume.
+    /// </summary>
+    [SerializeField] private Slider musicSlider;
+
+    /// <summary>
+    /// Slider for sound effects volume.
+    /// </summary>
+    [SerializeField] private Slider SFXSlider;
+
+    /// <summary>
+    /// This method is called right before the Start method. Here are loaded all the sound clips.
+    /// </summary>
     private void Awake()
     {
         foreach (Sound s in sounds)
@@ -46,6 +79,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This method gets from the PlayerPrefs the master, music and SFX volumes.
+    /// </summary>
     private void Start()
     {
         if (PlayerPrefs.HasKey("MasterVolume"))

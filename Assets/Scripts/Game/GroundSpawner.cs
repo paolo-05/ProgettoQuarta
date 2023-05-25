@@ -10,6 +10,9 @@ public class GroundSpawner : MonoBehaviour
     /// </summary>
     public GameObject groundTile;
 
+    /// <summary>
+    /// The next point for spawining a new tile.
+    /// </summary>
     private Vector3 nextSpawnPoint;
 
     /// <summary>

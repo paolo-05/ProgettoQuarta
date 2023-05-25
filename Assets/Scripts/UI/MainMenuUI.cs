@@ -8,14 +8,40 @@ using UnityEngine.UI;
 /// </summary>
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] GameObject enemy; // Reference to the enemy game object
-    [SerializeField] GameObject gun; // Reference to the gun game object
+    /// <summary>
+    /// Reference to the enemy game object.
+    /// </summary>
+    [SerializeField] GameObject enemy;
 
-    [SerializeField] GameObject startPanel; // Panel for the start menu
-    [SerializeField] GameObject optionsPanel; // Panel for the options menu
-    [SerializeField] GameObject loadingPanel; // Panel for the loading screen
-    [SerializeField] Slider loadingSlider; // Slider for the loading progress
-    [SerializeField] Text progressText; // Text for the loading progress
+    /// <summary>
+    /// Reference to the gun game object
+    /// </summary>
+    [SerializeField] GameObject gun;
+
+    /// <summary>
+    /// Panel for the start menu.
+    /// </summary>
+    [SerializeField] GameObject startPanel;
+
+    /// <summary>
+    /// Panel for the options menu.
+    /// </summary>
+    [SerializeField] GameObject optionsPanel;
+
+    /// <summary>
+    /// Panel for the loading screen.
+    /// </summary>
+    [SerializeField] GameObject loadingPanel;
+
+    /// <summary>
+    /// Slider for the loading progress.
+    /// </summary>
+    [SerializeField] Slider loadingSlider;
+
+    /// <summary>
+    /// Text for the loading progress.
+    /// </summary>
+    [SerializeField] Text progressText; 
 
     /// <summary>
     /// Starts the game by loading the game scene.

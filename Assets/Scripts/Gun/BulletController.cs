@@ -20,13 +20,17 @@ public class BulletController : MonoBehaviour
     /// </summary>
     public float damage = 10f;
 
+    /// <summary>
+    /// The distance traveled which is increased over time.
+    /// </summary>
     private float distanceTravelled = 0f;
+
+    /// <summary>
+    /// Reference to the CharacterController.
+    /// </summary>
     private CharacterController controller;
 
-    private void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
+    private void Start() => controller = GetComponent<CharacterController>();
 
     /// <summary>
     /// If the bullet's distance traveled is greater than its range, it's destroyed.
@@ -46,6 +50,7 @@ public class BulletController : MonoBehaviour
     /// <summary>
     /// If the bullet hits an enemy, the enemy takes damage.
     /// </summary>
+    /// <param name="hit">The game object that has collided with this game object.</param>
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.transform.CompareTag("Obstacle"))
@@ -56,7 +61,7 @@ public class BulletController : MonoBehaviour
         EnemyController enemy = hit.collider.GetComponent<EnemyController>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+            enemy.TakeDamage((int)damage);
             Destroy(gameObject);
         }
     }

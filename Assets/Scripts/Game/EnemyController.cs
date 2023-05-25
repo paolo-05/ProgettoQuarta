@@ -12,9 +12,14 @@ public class EnemyController : MonoBehaviour
     public bool isUIElement = false;
 
     /// <summary>
-    /// The health of the enemy.
+    /// The max health of the enemy.
     /// </summary>
-    public float health = 100f;
+    public int maxHealth = 100;
+
+    /// <summary>
+    /// The current health of the enemy
+    /// </summary>
+    public int currentHealth;
 
     /// <summary>
     /// The animator component for controlling animations.
@@ -22,13 +27,34 @@ public class EnemyController : MonoBehaviour
     public Animator animator;
 
     /// <summary>
+    /// The reference to the health bar.
+    /// </summary>
+    public HealthBar healthBar;
+
+    /// <summary>
+    /// Reference to the health bar game object.
+    /// </summary>
+    public GameObject healtBarGameObject;
+
+    /// <summary>
+    /// In this method, called only once the enemy is istantiated, the health is set.
+    /// </summary>
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        if ( isUIElement ) healtBarGameObject.SetActive(false);
+    }
+
+    /// <summary>
     /// Called when the enemy takes damage.
     /// </summary>
     /// <param name="damage">The amount of damage to inflict on the enemy.</param>
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         animator.SetTrigger("Take Damage");
-        health -= damage;
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         if (isUIElement)
         {
@@ -37,7 +63,7 @@ public class EnemyController : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("EnemyDamage");
 
-        if (health <= 0f)
+        if (currentHealth <= 0f)
         {
             StartCoroutine(Die());
         }

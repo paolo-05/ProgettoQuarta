@@ -5,10 +5,19 @@ using UnityEngine;
 /// </summary>
 public class CoinPickup : MonoBehaviour
 {
+    /// <summary>
+    /// The value of the coin.
+    /// </summary>
     public int coinValue = 1;
+
+    /// <summary>
+    /// The coin's rotation speed.
+    /// </summary>
     public float rotationSpeed = 800f;
 
-    // Rotate the coin
+    /// <summary>
+    /// Here we rotate the coin.
+    /// </summary>
     private void Update()
     {
         transform.Rotate(rotationSpeed * Time.deltaTime * Vector3.up, Space.World);

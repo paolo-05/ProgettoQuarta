@@ -10,15 +10,15 @@ public class CameraFollow : MonoBehaviour
     /// </summary>
     [SerializeField] Transform player;
 
-    private Vector3 offset; // Vector representing the distance between the camera and the player
+    /// <summary>
+    /// Vector representing the distance between the camera and the player
+    /// </summary>
+    private Vector3 offset;
 
     /// <summary>
     /// Calculates the initial offset between the camera and the player.
     /// </summary>
-    private void Start()
-    {
-        offset = transform.position - player.position;
-    }
+    private void Start() => offset = transform.position - player.position;
 
     /// <summary>
     /// Updates the camera's position based on the player's position.

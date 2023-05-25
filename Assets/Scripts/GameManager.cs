@@ -9,24 +9,29 @@ using UnityEngine.UI;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // Singleton instance
+    /// <summary>
+    /// Singleton instance.
+    /// </summary>
+    public static GameManager instance; 
 
-    // Number of tiles free from obstacles at the beginning of the game
+    /// <summary>
+    /// Number of tiles free from obstacles at the beginning of the game.
+    /// </summary>
     public int tilesFreeFromObstacles = 3;
 
-    // Variables to keep track of game state
+    // Group: Variables to keep track of game state.
     public int thisGameCoins = 0;
     public bool gameStarted = false;
     public bool gameOver = false;
     public bool isPaused = false;
 
-    // Variables to keep track of score and coins
+    // Group: Variables to keep track of score and coins.
     private int coins;
     private int personalBest;
     private int pastPersonalBest;
     public int score = 0;
 
-    // Game objects in the scene
+    // Group: Game objects in the scene.
     [SerializeField] GameObject scoreGameObject;
     [SerializeField] GameObject bestScoreGameObject;
     [SerializeField] GameObject coinsGameObject;
@@ -35,20 +40,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject personalBestGameObject;
 
-    // Text objects in the scene
+    // Group: Text objects in the scene.
     [SerializeField] Text scoreText;
     [SerializeField] Text personalBestText;
     [SerializeField] Text coinText;
     [SerializeField] Text thisGameCoinsText;
     [SerializeField] Text thisGameScoreText;
-
+    
+    /// <summary>
+    /// Reference to the PlayerController component.
+    /// </summary>
     [SerializeField] PlayerController playerController;
 
     private GameUI gameUI;
 
+    /// <summary>
+    /// Set up singleton instance
+    /// </summary>
     private void Awake()
     {
-        // Set up singleton instance
         if (instance == null)
         {
             instance = this;
@@ -64,9 +74,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
 
         gameUI = FindObjectOfType<GameUI>();
-        // reset the best score and coins
-        // PlayerPrefs.SetInt("PersonalBest", 0);
-        // PlayerPrefs.SetInt("Coins", 1000);
 
         // Get the personal best score and total coins from PlayerPrefs
         personalBest = PlayerPrefs.GetInt("PersonalBest", 0);

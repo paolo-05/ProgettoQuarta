@@ -29,12 +29,13 @@ public class ModalDialog : MonoBehaviour
     /// </summary>
     [SerializeField] Button cancelButton;
 
+    /// <summary>
+    /// The current scene.
+    /// </summary>
     private int scene;
 
     private void Start()
     {
-        // modalPanelObject.SetActive(false);
-        // blockerPanelObject.SetActive(false);
         yesButton.onClick.AddListener(OnYesClicked);
         noButton.onClick.AddListener(OnNoClicked);
         cancelButton.onClick.AddListener(OnNoClicked);

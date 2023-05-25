@@ -74,33 +74,99 @@ public class Purchase : MonoBehaviour
     /// </summary>
     [SerializeField] GunController gunController;
 
-    private int coins; // The number of coins the player has
+    /// <summary>
+    /// The number of coins the player has.
+    /// </summary>
+    private int coins;
 
-    private float bulletSpeed; // The current speed of the bullets
-    private float bulletSpeedCost; // The cost to upgrade the bullet speed
+    /// <summary>
+    /// The current speed of the bullets.
+    /// </summary>
+    private float bulletSpeed;
 
-    private float bulletDamage; // The current damage of the bullet
-    private float bulletDamageCost; // The cost for upgrading bullet damage
+    /// <summary>
+    /// The cost to upgrade the bullet.
+    /// </summary>
+    private float bulletSpeedCost;
 
-    private float bulletRange; // The current range of the bullet
-    private float bulletRangeCost; // The cost for upgrading bullet range
+    /// <summary>
+    /// The current damage of the bullet.
+    /// </summary>
+    private float bulletDamage;
 
-    private float fireRate; // The current fire rate
-    private float fireRateCost = 20; // The cost for upgrading fire rate
+    /// <summary>
+    /// The cost for upgrading bullet damage.
+    /// </summary>
+    private float bulletDamageCost;
 
-    // Upgrade cost multiplier
+    /// <summary>
+    /// The current range of the bullet.
+    /// </summary>
+    private float bulletRange;
+
+    /// <summary>
+    /// The cost for upgrading bullet range.
+    /// </summary>
+    private float bulletRangeCost;
+
+    /// <summary>
+    /// The current fire rate.
+    /// </summary>
+    private float fireRate;
+
+    /// <summary>
+    /// The cost for upgrading fire rate.
+    /// </summary>
+    private float fireRateCost = 20;
+
+    /// <summary>
+    /// Upgrade cost multiplier.
+    /// </summary>
     private readonly float upgradeCostMultiplier = 1.2f;
 
-    // Constants used for upgrades
+    /// <summary>
+    /// Constant used for upgrading the bullet speed.
+    /// </summary>
     private readonly float bulletSpeedIncreaseAmount = 50f;
+
+    /// <summary>
+    /// The maximum upgrade for bullet speed.
+    /// </summary>
     private readonly float bulletSpeedMax = 500f;
+
+    /// <summary>
+    /// Constant used for upgrading the bullet damage.
+    /// </summary>
     private readonly float bulletDamageIncreaseAmount = 5f;
+
+    /// <summary>
+    /// The maximum upgrade for bullet damage.
+    /// </summary>
     private readonly float bulletDamageMax = 150f;
+
+    /// <summary>
+    /// Constant used for upgrading the bullet range.
+    /// </summary>
     private readonly float bulletRangeIncreaseAmount = 10f;
+
+    /// <summary>
+    /// The maximum upgrade for bullet range.
+    /// </summary>
     private readonly float bulletRangeMax = 200f;
+
+    /// <summary>
+    /// Constant used for upgrading the fire rate.
+    /// </summary>
     private readonly float fireRateDecreaseAmount = 0.05f;
+
+    /// <summary>
+    /// The maximum upgrade for fire rate.
+    /// </summary>
     private readonly float fireRateMin = 0.05f;
 
+    /// <summary>
+    /// Getting from the *PlayerPrefs* the past updates of the weapon.
+    /// </summary>
     void Start()
     {
         // Get the bullet stats and calculate the upgrade costs, set the current level of upgrades
@@ -121,6 +187,9 @@ public class Purchase : MonoBehaviour
         fireRateText.text = $"Fire rate: {Math.Round(fireRate, 3)}";
     }
 
+    /// <summary>
+    /// Here it's checked the number of coins and the cost of the upgrades.
+    /// </summary>
     private void Update()
     {
         coins = PlayerPrefs.GetInt("Coins", 0);
