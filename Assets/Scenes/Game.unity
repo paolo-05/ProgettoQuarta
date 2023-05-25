@@ -6815,7 +6815,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2814757473495542904, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_Text
-      value: For moving the player you can use WASD or arrow keys.
+      value: "For moving the player you can use WASD or arrow keys. \nFor shooting
+        you can use the space key."
       objectReference: {fileID: 0}
     - target: {fileID: 2814757473495542904, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -6863,11 +6864,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814757473495542905, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 270
+      value: 315
       objectReference: {fileID: 0}
     - target: {fileID: 2814757473495542905, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2814757473495542905, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6899,7 +6900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814757473495542905, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -280
+      value: -302.91714
       objectReference: {fileID: 0}
     - target: {fileID: 2814757473495542905, guid: ecfaf24315d30fe4aa7bd69f3b65a753, type: 3}
       propertyPath: m_AnchoredPosition.y

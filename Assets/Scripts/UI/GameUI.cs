@@ -49,6 +49,13 @@ public class GameUI : MonoBehaviour
         {
             pauseButton.SetActive(false);
         }
+        if (GameManager.instance.gameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Return))
+                PlayAgain();
+            else if (Input.GetKeyDown(KeyCode.Escape))
+                MainMenu();
+        }
     }
 
     /// <summary>

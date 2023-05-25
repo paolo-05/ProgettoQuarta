@@ -55,7 +55,7 @@ public class GunController : MonoBehaviour
 
         if (!GameManager.instance.gameStarted || GameManager.instance.gameOver) return;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }

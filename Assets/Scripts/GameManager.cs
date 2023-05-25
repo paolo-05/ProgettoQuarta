@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
         coinText.text = coins.ToString();
 
-        if (!gameStarted && Input.GetKeyDown(KeyCode.P))
+        if (!gameStarted && (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Return)))
         {
             gameStarted = true;
             startGame.SetActive(false);
