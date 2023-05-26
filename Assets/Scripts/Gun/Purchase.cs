@@ -461,7 +461,7 @@ public class Purchase : MonoBehaviour
 
         // Increase the cost
         fireRateCost *= upgradeCostMultiplier;
-        fireRateCostText.text = "Upgrade cost: " + Math.Round(fireRateCost, 3);
+        fireRateCostText.text = "Upgrade cost: " + Math.Round(fireRateCost);
         PlayerPrefs.SetFloat("FireRateCost", fireRateCost);
 
         PlayerPrefs.SetFloat("FireRate", fireRate);
