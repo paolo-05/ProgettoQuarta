@@ -1,0 +1,1 @@
+﻿NDFramePage.OnPageTitleLoaded("File:CloudController.cs","CloudController.cs");NDSummary.OnSummaryLoaded("File:CloudController.cs",[["C#","CSharp"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[241,0,0,"CloudController","CloudController"],[250,0,2,"Functions","CloudController.Functions"],[258,0,1,"Update","CloudController.Update"]]);

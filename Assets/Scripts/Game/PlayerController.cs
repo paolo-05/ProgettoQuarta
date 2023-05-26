@@ -188,7 +188,8 @@ public class PlayerController : MonoBehaviour
         if (hit.transform.CompareTag("Obstacle"))
         {
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
-            GameManager.instance.gameOver = true;
+            animator.SetTrigger("die");
+            Die();
         }
         if (hit.transform.CompareTag("Enemy"))
         {
@@ -224,6 +225,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator EnemyCollision(ControllerColliderHit hit)
     {
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        animator.SetTrigger("die");
         hit.gameObject.GetComponent<EnemyController>().Attack();
 
         yield return new WaitForSeconds(0.3f);
@@ -236,7 +238,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void Die()
     {
-        animator.SetBool("isGameStarted", false);
         GameManager.instance.gameOver = true;
     }
 }
