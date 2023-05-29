@@ -71,7 +71,9 @@ public class GameUI : MonoBehaviour
     /// <summary>
     /// Text object for countdown
     /// </summary>
-    [SerializeField] Text countdownText; 
+    [SerializeField] Text countdownText;
+
+    [SerializeField] Animator newPersonalBestAnimator;
 
     /// <summary>
     /// Activated when the object is initialized.
@@ -239,6 +241,11 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 1f; // Resume the game time
         GameManager.instance.isPaused = false;
         pauseButton.SetActive(true);
+    }
+
+    public void PlayNewPersonalBest()
+    {
+        newPersonalBestAnimator.SetTrigger("newBest");
     }
 
     /// <summary>

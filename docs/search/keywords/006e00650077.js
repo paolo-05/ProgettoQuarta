@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("new",["Variable"],[["newPersonalBest",,[["GameManager",,,,0,"File:GameManager.cs:GameManager.newPersonalBest","CSharpClass:GameManager:newPersonalBest"]]],["newPersonalBestAnimator",,[["GameUI",,,,0,"File:GameUI.cs:GameUI.newPersonalBestAnimator","CSharpClass:GameUI:newPersonalBestAnimator"]]]]);

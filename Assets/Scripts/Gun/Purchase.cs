@@ -173,18 +173,22 @@ public class Purchase : MonoBehaviour
         bulletSpeed = PlayerPrefs.GetFloat("BulletSpeed");
         bulletSpeedCost = PlayerPrefs.GetFloat("BulletSpeedCost");
         bulletSpeedText.text = $"Bullet Speed: {bulletSpeed}";
+        gunController.bulletSpeed = bulletSpeed;
 
         bulletRange = PlayerPrefs.GetFloat("BulletRange");
         bulletRangeCost = PlayerPrefs.GetFloat("BulletRangeCost");
         bulletRangeText.text = $"Bullet Range: {bulletRange}";
+        gunController.bulletRange = bulletRange;
 
         bulletDamage = PlayerPrefs.GetFloat("BulletDamage");
         bulletDamageCost = PlayerPrefs.GetFloat("BulletDamageCost");
         bulletDamageText.text = $"Bullet Damage: {bulletDamage}";
+        gunController.bulletDamage = bulletDamage;
 
         fireRate = PlayerPrefs.GetFloat("FireRate");
         fireRateCost = PlayerPrefs.GetFloat("FireRateCost");
         fireRateText.text = $"Fire rate: {Math.Round(fireRate, 3)}";
+        gunController.fireRate = fireRate;
     }
 
     /// <summary>
@@ -265,7 +269,7 @@ public class Purchase : MonoBehaviour
         }
         else
         {
-            fireRateCostText.text = $"Upgrade cost: {Math.Round(fireRateCost, 3)}";
+            fireRateCostText.text = $"Upgrade cost: {Math.Round(fireRateCost)}";
         }
 
         // Check if the player can upgrade fire rate

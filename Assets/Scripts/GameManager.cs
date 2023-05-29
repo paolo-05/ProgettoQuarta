@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -12,7 +9,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Singleton instance.
     /// </summary>
-    public static GameManager instance; 
+    public static GameManager instance;
 
     /// <summary>
     /// Number of tiles free from obstacles at the beginning of the game.
@@ -29,6 +26,7 @@ public class GameManager : MonoBehaviour
     private int coins;
     private int personalBest;
     private int pastPersonalBest;
+    private bool newPersonalBest = false;
     public int score = 0;
 
     // Group: Game objects in the scene.
@@ -46,7 +44,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text coinText;
     [SerializeField] Text thisGameCoinsText;
     [SerializeField] Text thisGameScoreText;
-    
+
     /// <summary>
     /// Reference to the PlayerController component.
     /// </summary>
@@ -154,6 +152,12 @@ public class GameManager : MonoBehaviour
             personalBest = score;
             PlayerPrefs.SetInt("PersonalBest", personalBest);
             personalBestText.text = personalBest.ToString();
+
+            if (!newPersonalBest)
+            {
+                gameUI.PlayNewPersonalBest();
+                newPersonalBest = true;
+            }
         }
     }
 
