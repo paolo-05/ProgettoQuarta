@@ -110,10 +110,10 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            if (SwipeManager.instance.swipeUp)
                 Jump();
 
-            if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) && !isSliding)
+            if (SwipeManager.instance.swipeDown && !isSliding)
                 StartCoroutine(Slide());
         }
         else
@@ -127,13 +127,13 @@ public class PlayerController : MonoBehaviour
         }
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if (SwipeManager.instance.swipeRight)
         {
             desiredLane++;
             if (desiredLane == 3)
                 desiredLane = 2;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (SwipeManager.instance.swipeLeft)
         {
             desiredLane--;
             if (desiredLane == -1)
